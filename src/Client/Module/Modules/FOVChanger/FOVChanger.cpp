@@ -33,7 +33,7 @@ void FOVChanger::settingsRender(float settingsOffset) {
 
     addHeader("FOV Changer");
     addSlider("FOV Value", "", "fovvalue", 359.0f, 0, false);
-    addToggle("Affect Hand Size22222", "Keep normal hand size or not.", "fovaffectshand");
+    addToggle("Affect Hand Size22232", "Keep normal hand size or not.", "fovaffectshand");
 
     FlarialGUI::UnsetScrollView();
 
