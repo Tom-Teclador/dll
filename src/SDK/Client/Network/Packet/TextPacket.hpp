@@ -36,19 +36,19 @@ public:
     //AKA this is the simplest  way to do it
     static std::string typeToString(TextPacketType type) {
         switch (type) {
-            case TextPacketType::RAW: return "RAW";
-            case TextPacketType::CHAT: return "CHAT";
-            case TextPacketType::TRANSLATION: return "TRANSLATION";
-            case TextPacketType::POPUP: return "POPUP";
-            case TextPacketType::JUKEBOX_POPUP: return "JUKEBOX_POPUP";
-            case TextPacketType::TIP: return "TIP";
-            case TextPacketType::SYSTEM: return "SYSTEM";
-            case TextPacketType::WHISPER: return "WHISPER";
-            case TextPacketType::JSON_WHISPER: return "JSON_WHISPER";
-            case TextPacketType::JSON: return "JSON";
-            case TextPacketType::JSON_ANNOUNCEMENT: return "JSON_ANNOUNCEMENT";
-            default:
-                return "UNKNOWN";
+        case TextPacketType::RAW: return "RAW";
+        case TextPacketType::CHAT: return "CHAT";
+        case TextPacketType::TRANSLATION: return "TRANSLATION";
+        case TextPacketType::POPUP: return "POPUP";
+        case TextPacketType::JUKEBOX_POPUP: return "JUKEBOX_POPUP";
+        case TextPacketType::TIP: return "TIP";
+        case TextPacketType::SYSTEM: return "SYSTEM";
+        case TextPacketType::WHISPER: return "WHISPER";
+        case TextPacketType::JSON_WHISPER: return "JSON_WHISPER";
+        case TextPacketType::JSON: return "JSON";
+        case TextPacketType::JSON_ANNOUNCEMENT: return "JSON_ANNOUNCEMENT";
+        default:
+            return "UNKNOWN";
 
         }
     }
