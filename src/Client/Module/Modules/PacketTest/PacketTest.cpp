@@ -4,12 +4,12 @@
 
 
 void PacketTest::onEnable() {
-    Listen(this, PacketEvent, &AutoGG::onPacketReceive)
+    Listen(this, PacketEvent, &PacketTest::onPacketReceive)
     Module::onEnable();
 }
 
 void PacketTest::onDisable() {
-    Deafen(this, PacketEvent, &AutoGG::onPacketReceive)
+    Deafen(this, PacketEvent, &PacketTest::onPacketReceive)
     Module::onDisable();
 }
 
