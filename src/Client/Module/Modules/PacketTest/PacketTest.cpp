@@ -1,5 +1,5 @@
 #include "PacketTest.hpp"
-
+#include <string>
 #include "Events/EventManager.hpp"
 
 
@@ -30,7 +30,7 @@ void PacketTest::onPacketReceive(PacketEvent& event) {
     // TODO: add support for other servers (look for "won the game" text)
     if (id == MinecraftPacketIds::UpdateAttributes) {
         auto* pkt = reinterpret_cast<UpdateAttributesPacket*>(event.getPacket());
-        FlarialGUI::Notify(pkt->RuntimeEntityID);
+        FlarialGUI::Notify(std::to_string(pkt->RuntimeEntityID) );
     }
 }
 
