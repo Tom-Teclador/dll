@@ -4,6 +4,16 @@
 #include "Packet.hpp"
 #include <string>
 
+class PlayerAttributesModifierType {
+public:
+    std::string Id;
+    std::string Name;
+    float Amount;
+    int32_t Operation;
+    int32_t Operand;
+    bool Serializable;
+};
+
 class PlayerAttributesType {
 public:
     float Min;
@@ -16,15 +26,7 @@ public:
     std::vector<PlayerAttributesModifierType> Modifiers;
 };
 
-class PlayerAttributesModifierType {
-public:
-    std::string Id;
-    std::string Name;
-    float Amount;
-    int32_t Operation;
-    int32_t Operand;
-    bool Serializable;
-};
+
 
 class UpdateAttributesPacket : public Packet {
 public:
