@@ -110,6 +110,7 @@
 #include "Modules/JavaViewBobbing/JavaViewBobbing.hpp"
 #include "Modules/Clone/Clone.hpp"
 #include "Modules/MovableDayCounter/MovableDayCounter.hpp"
+#include "Modules/PacketLogger/PacketLogger.hpp"
 
 void ModuleManager::getModules() {
 	for (const auto& pair : moduleMap) {
@@ -259,7 +260,7 @@ void ModuleManager::initialize() {
 	addModule<DisableMouseWheel>();
 	addModule<JavaDebugMenu>();
 	addModule<DirectionHUD>();
-
+	addModule<PacketLogger>();
 	addModule<JavaViewBobbing>();
 
 	addService<GUIKeyListener>();
