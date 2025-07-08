@@ -17,8 +17,15 @@ void PacketLogger::onEnable()
 
 void PacketLogger::onDisable()
 {
+    FlarialGUI::Notify("Disabled!");
     FILE* f = std::fopen("C:\\Users\\tom\\Desktop\\Log MCBE.txt", "wb");
     if (f) {
+        FlarialGUI::Notify("Disabled! 2");
+        std::memcpy(&buffer[write_offset], "Hello", 5);
+        write_offset += 5;
+        buffer[write_offset++] = '\n';
+        buffer[write_offset++] = '\n';
+
         std::fwrite(buffer.data(), 1, write_offset, f);
         std::fclose(f);
     }
@@ -34,8 +41,9 @@ void PacketLogger::defaultConfig()
 }
 
 void PacketLogger::onPacketReceive(PacketEvent& event) {
+    FlarialGUI::Notify("Event!");
     if (!this->isEnabled()) return;
-
+    FlarialGUI::Notify("Event! 2");
     std::memcpy(&buffer[write_offset], "Hello", 5);
     write_offset += 5;
     buffer[write_offset++] = '\n';
