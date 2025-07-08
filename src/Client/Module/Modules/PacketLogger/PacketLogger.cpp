@@ -9,13 +9,13 @@ PacketLogger::PacketLogger(): Module("PacketLogger", "Logs clientbound and serve
 
 void PacketLogger::onEnable()
 {
-    Listen(this, PacketEvent, &AutoGG::onPacketReceive)
+    Listen(this, PacketEvent, &PacketLogger::onPacketReceive)
     Module::onEnable();
 }
 
 void PacketLogger::onDisable()
 {
-    Deafen(this, PacketEvent, &AutoGG::onPacketReceive)
+    Deafen(this, PacketEvent, &PacketLogger::onPacketReceive)
     Module::onDisable();
 }
 
