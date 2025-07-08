@@ -25,6 +25,6 @@ void PacketLogger::defaultConfig()
     
 }
 
-void AutoGG::onPacketReceive(PacketEvent& event) {
+void PacketLogger::onPacketReceive(PacketEvent& event) {
 
 }
