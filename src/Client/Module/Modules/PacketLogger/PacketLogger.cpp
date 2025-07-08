@@ -19,7 +19,7 @@ void PacketLogger::onDisable()
 {
     FILE* f = std::fopen("C:\\Users\\tom\\Desktop\\Log MCBE.txt", "wb");
     if (f) {
-        std::fwrite(buffer, 1, write_offset, f);
+        std::fwrite(buffer.data(), 1, write_offset, f);
         std::fclose(f);
     }
 
