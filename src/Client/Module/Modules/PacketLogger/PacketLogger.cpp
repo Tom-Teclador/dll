@@ -41,27 +41,27 @@ void PacketLogger::onPacketReceive(PacketEvent& event) {
     std::memcpy(&buffer[write_offset], "Clientbound ", 12);
     write_offset += 12;
 
-    onPacket(event, false);
+    onPacket(event.getPacket(), false);
 
     std::memcpy(&buffer[write_offset], "}\n\n", 3);
     write_offset += 3;
 }
 
-void PacketLogger::onPacketSend(PacketEvent& event) {
+void PacketLogger::onPacketSend(PacketSendEvent& event) {
     if (!this->isEnabled()) return;
 
     std::memcpy(&buffer[write_offset], "Serverbound ", 12);
     write_offset += 12;
 
-    onPacket(event, true);
+    onPacket(event.getPacket(), true);
 
     std::memcpy(&buffer[write_offset], "}\n\n", 3);
     write_offset += 3;
 }
 
-void PacketLogger::onPacket(PacketEvent& event, bool serverbound) {
+void PacketLogger::onPacket(Packet& packet, bool serverbound) {
 
-    int id = static_cast<int>(event.getPacket()->getId());
+    int id = static_cast<int>(packet->getId());
     
     appendInt(id);
     std::memcpy(&buffer[write_offset++], " ", 1);

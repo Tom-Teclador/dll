@@ -28,7 +28,7 @@ public:
 
     void onPacketReceive(PacketEvent& event);
 
-    void onPacketSend(PacketEvent& event);
+    void onPacketSend(PacketSendEvent& event);
 
-    void onPacket(PacketEvent& event, bool serverbound);
+    void onPacket(Packet& packet, bool serverbound);
 };
