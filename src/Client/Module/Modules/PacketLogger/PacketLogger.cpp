@@ -73,23 +73,32 @@ void PacketLogger::onPacket(Packet& packet, bool serverbound) {
 
 
 inline void PacketLogger::appendInt(int value) {
-    FlarialGUI::Notify("1: " + std::to_string(value));
+    std::string msg = ("1: " + std::to_string(value));
+    std::memcpy(&buffer[write_offset], msg.data(), msg.length());
+    write_offset += msg.length();
     uint32_t uval = static_cast<uint32_t>(value);
     char* out = buffer.data() + write_offset;
-    FlarialGUI::Notify("2: " + std::to_string(uval));
+    msg = ("2: " + std::to_string(uval));
+    std::memcpy(&buffer[write_offset], msg.data(), msg.length());
+    write_offset += msg.length();
     uint32_t tmp = uval;
     size_t digits = (uval == 0) ? 1 : 0;
     while (tmp) {
         tmp /= 10;
         ++digits;
     }
-    FlarialGUI::Notify("digits: " + std::to_string(digits));
+
+    msg = "digits: " + std::to_string(digits);
+    std::memcpy(&buffer[write_offset], msg.data(), msg.length());
+    write_offset += msg.length();
 
     size_t pos = write_offset + digits - 1;
 
     do {
         out[pos--] = '0' + (uval % 10);
-        FlarialGUI::Notify("loop: " + std::to_string((uval % 10)) + " => " + std::to_string('0' + (uval % 10)));
+        msg = ("loop: " + std::to_string((uval % 10)) + " => " + std::to_string('0' + (uval % 10)));
+        std::memcpy(&buffer[write_offset], msg.data(), msg.length());
+        write_offset += msg.length();
         uval /= 10;
     } while (uval);
 
