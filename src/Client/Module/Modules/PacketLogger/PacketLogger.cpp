@@ -18,7 +18,7 @@ void PacketLogger::onEnable()
 void PacketLogger::onDisable()
 {
     FlarialGUI::Notify("Disabled!");
-    FILE* f = std::fopen("C:\\Users\\tom\\Desktop\\Log MCBE.txt", "wb");
+    FILE* f = std::fopen((Utils::getClientPath() + "\\logs\\packet.log").data(), "wb");
     if (f) {
         FlarialGUI::Notify("Disabled! 2");
         std::memcpy(&buffer[write_offset], "Hello", 5);
