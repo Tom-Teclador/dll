@@ -2,6 +2,7 @@
 
 #include "../Module.hpp"
 #include "Events/Network/PacketEvent.hpp"
+#include "Events/Network/PacketSendEvent.hpp"
 #include <string>
 #include <cstring> // memcpy
 #include <cstdio>
@@ -12,6 +13,10 @@ class PacketLogger : public Module {
 private:
     std::string buffer;
     size_t write_offset = 0;
+
+    void appendHex(int value);
+
+    void appendInt(int value);
 public:
     PacketLogger();;
 
@@ -22,4 +27,8 @@ public:
     void defaultConfig() override;
 
     void onPacketReceive(PacketEvent& event);
+
+    void onPacketSend(PacketEvent& event);
+
+    void onPacket(PacketEvent& event, bool serverbound);
 };
