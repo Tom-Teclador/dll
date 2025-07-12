@@ -23,7 +23,7 @@ void SendPacketHook::receiveCallbackPlayStatus(void *packetHandlerDispatcher, vo
         receivePacketPlayStatusOriginal(packetHandlerDispatcher, networkIdentifier, netEventCallback, packet);
 }
 
-void SendPacketHook::receiveCallbackServerToClientHandshake(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
+/*void SendPacketHook::receiveCallbackServerToClientHandshake(void* packetHandlerDispatcher, void* networkIdentifier, void* netEventCallback,
                                          const std::shared_ptr<Packet>& packet) {
     SendPacketHook::setVariables(packetHandlerDispatcher, networkIdentifier, netEventCallback);
 
@@ -293,7 +293,7 @@ void SendPacketHook::receiveCallbackMobArmorEquipment(void *packetHandlerDispatc
         receivePacketMobArmorEquipmentOriginal(packetHandlerDispatcher, networkIdentifier, netEventCallback, packet);
 }
 
-void SendPacketHook::receiveCallbackInteract(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
+*/void SendPacketHook::receiveCallbackInteract(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
                                          const std::shared_ptr<Packet>& packet) {
     SendPacketHook::setVariables(packetHandlerDispatcher, networkIdentifier, netEventCallback);
 
@@ -301,7 +301,7 @@ void SendPacketHook::receiveCallbackInteract(void *packetHandlerDispatcher, void
     eventMgr.trigger(event);
     if (!event->isCancelled())
         receivePacketInteractOriginal(packetHandlerDispatcher, networkIdentifier, netEventCallback, packet);
-}
+}/*
 
 void SendPacketHook::receiveCallbackHurtArmor(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
                                          const std::shared_ptr<Packet>& packet) {
@@ -383,7 +383,7 @@ void SendPacketHook::receiveCallbackRespawn(void *packetHandlerDispatcher, void 
         receivePacketRespawnOriginal(packetHandlerDispatcher, networkIdentifier, netEventCallback, packet);
 }
 
-void SendPacketHook::receiveCallbackContainerOpen(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
+*/void SendPacketHook::receiveCallbackContainerOpen(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
                                          const std::shared_ptr<Packet>& packet) {
     SendPacketHook::setVariables(packetHandlerDispatcher, networkIdentifier, netEventCallback);
 
@@ -401,7 +401,7 @@ void SendPacketHook::receiveCallbackContainerClose(void *packetHandlerDispatcher
     eventMgr.trigger(event);
     if (!event->isCancelled())
         receivePacketContainerCloseOriginal(packetHandlerDispatcher, networkIdentifier, netEventCallback, packet);
-}
+}/*
 
 void SendPacketHook::receiveCallbackPlayerHotbar(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
                                          const std::shared_ptr<Packet>& packet) {
@@ -481,7 +481,7 @@ void SendPacketHook::receiveCallbackAdventureSettings_Deprecated(void *packetHan
     eventMgr.trigger(event);
     if (!event->isCancelled())
         receivePacketAdventureSettings_DeprecatedOriginal(packetHandlerDispatcher, networkIdentifier, netEventCallback, packet);
-}
+}*/
 
 void SendPacketHook::receiveCallbackBlockActorData(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
                                          const std::shared_ptr<Packet>& packet) {
@@ -599,7 +599,7 @@ void SendPacketHook::enableHook() {
     Memory::hookFunc((void*)playStatusPacket->packetHandler->vTable[1], (void*)receiveCallbackPlayStatus,
         (void**)&receivePacketPlayStatusOriginal, "ReceivePacketHook");
 
-    std::shared_ptr<Packet> serverToClientHandshakePacket = SDK::createPacket((int) MinecraftPacketIds::ServerToClientHandshake);
+    /*std::shared_ptr<Packet> serverToClientHandshakePacket = SDK::createPacket((int)MinecraftPacketIds::ServerToClientHandshake);
     Memory::hookFunc((void *) serverToClientHandshakePacket->packetHandler->vTable[1], (void*)receiveCallbackServerToClientHandshake,
                      (void **) &receivePacketServerToClientHandshakeOriginal, "ReceivePacketHook");
 
@@ -707,9 +707,9 @@ void SendPacketHook::enableHook() {
     Memory::hookFunc((void *) mobArmorEquipmentPacket->packetHandler->vTable[1], (void*)receiveCallbackMobArmorEquipment,
                      (void **) &receivePacketMobArmorEquipmentOriginal, "ReceivePacketHook");
 
-    std::shared_ptr<Packet> interactPacket = SDK::createPacket((int) MinecraftPacketIds::Interact);
+    */std::shared_ptr<Packet> interactPacket = SDK::createPacket((int) MinecraftPacketIds::Interact);
     Memory::hookFunc((void *) interactPacket->packetHandler->vTable[1], (void*)receiveCallbackInteract,
-                     (void **) &receivePacketInteractOriginal, "ReceivePacketHook");
+                     (void **) &receivePacketInteractOriginal, "ReceivePacketHook");/*
 
     std::shared_ptr<Packet> hurtArmorPacket = SDK::createPacket((int) MinecraftPacketIds::HurtArmor);
     Memory::hookFunc((void *) hurtArmorPacket->packetHandler->vTable[1], (void*)receiveCallbackHurtArmor,
@@ -743,13 +743,13 @@ void SendPacketHook::enableHook() {
     Memory::hookFunc((void *) respawnPacket->packetHandler->vTable[1], (void*)receiveCallbackRespawn,
                      (void **) &receivePacketRespawnOriginal, "ReceivePacketHook");
 
-    std::shared_ptr<Packet> containerOpenPacket = SDK::createPacket((int) MinecraftPacketIds::ContainerOpen);
+    */std::shared_ptr<Packet> containerOpenPacket = SDK::createPacket((int) MinecraftPacketIds::ContainerOpen);
     Memory::hookFunc((void *) containerOpenPacket->packetHandler->vTable[1], (void*)receiveCallbackContainerOpen,
                      (void **) &receivePacketContainerOpenOriginal, "ReceivePacketHook");
 
     std::shared_ptr<Packet> containerClosePacket = SDK::createPacket((int) MinecraftPacketIds::ContainerClose);
     Memory::hookFunc((void *) containerClosePacket->packetHandler->vTable[1], (void*)receiveCallbackContainerClose,
-                     (void **) &receivePacketContainerCloseOriginal, "ReceivePacketHook");
+                     (void **) &receivePacketContainerCloseOriginal, "ReceivePacketHook");/*
 
     std::shared_ptr<Packet> playerHotbarPacket = SDK::createPacket((int) MinecraftPacketIds::PlayerHotbar);
     Memory::hookFunc((void *) playerHotbarPacket->packetHandler->vTable[1], (void*)receiveCallbackPlayerHotbar,
@@ -781,7 +781,7 @@ void SendPacketHook::enableHook() {
 
     std::shared_ptr<Packet> adventureSettings_DeprecatedPacket = SDK::createPacket((int) MinecraftPacketIds::AdventureSettings_Deprecated);
     Memory::hookFunc((void *) adventureSettings_DeprecatedPacket->packetHandler->vTable[1], (void*)receiveCallbackAdventureSettings_Deprecated,
-                     (void **) &receivePacketAdventureSettings_DeprecatedOriginal, "ReceivePacketHook");
+                     (void **) &receivePacketAdventureSettings_DeprecatedOriginal, "ReceivePacketHook");*/
 
     std::shared_ptr<Packet> blockActorDataPacket = SDK::createPacket((int) MinecraftPacketIds::BlockActorData);
     Memory::hookFunc((void *) blockActorDataPacket->packetHandler->vTable[1], (void*)receiveCallbackBlockActorData,
