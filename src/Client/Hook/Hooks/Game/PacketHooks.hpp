@@ -11,6 +11,9 @@ private:
     static void setVariables(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback);
 
     static void callback(LoopbackPacketSender *pSender, Packet *pPacket);
+    
+    static void receiveCallbackPlayStatus(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
+                                    const std::shared_ptr<Packet>& packet);
 
     static void receiveCallbackText(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
                                     const std::shared_ptr<Packet>& packet);
@@ -54,6 +57,7 @@ public:
                                       std::shared_ptr<Packet> packet);
 
     static inline original sendPacketOriginal = nullptr;
+    static inline receive receivePlayStatusPacketOriginal = nullptr;
     static inline receive receiveTextPacketOriginal = nullptr;
     static inline receive receiveSetTitlePacketOriginal = nullptr;
     static inline receive receivePacketPlaySoundOriginal = nullptr;

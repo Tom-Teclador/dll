@@ -43,8 +43,8 @@ void PacketLogger::onPacketReceive(PacketEvent& event) {
 
     onPacket(*event.getPacket(), false);
 
-    std::memcpy(&buffer[write_offset], "}\n\n", 3);
-    write_offset += 3;
+    std::memcpy(&buffer[write_offset], "\n}\n\n", 4);
+    write_offset += 4;
 }
 
 void PacketLogger::onPacketSend(PacketSendEvent& event) {

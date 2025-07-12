@@ -13,6 +13,16 @@ void SendPacketHook::callback(LoopbackPacketSender *pSender, Packet *pPacket) {
     }
 }
 
+void SendPacketHook::receiveCallbackPlayStatus(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
+                                         const std::shared_ptr<Packet>& packet) {
+    SendPacketHook::setVariables(packetHandlerDispatcher, networkIdentifier, netEventCallback);
+
+    auto event = nes::make_holder<PacketEvent>(packet.get());
+    eventMgr.trigger(event);
+    if (!event->isCancelled())
+        receivePlayStatusPacketOriginal(packetHandlerDispatcher, networkIdentifier, netEventCallback, packet);
+}
+
 void SendPacketHook::receiveCallbackText(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
                                          const std::shared_ptr<Packet>& packet) {
     SendPacketHook::setVariables(packetHandlerDispatcher, networkIdentifier, netEventCallback);
@@ -119,6 +129,11 @@ void SendPacketHook::enableHook() {
 
         Sleep(300);
     }*/
+
+
+    std::shared_ptr<Packet> playStatusPacket = SDK::createPacket((int)MinecraftPacketIds::PlayStatus);
+    Memory::hookFunc((void*)playStatusPacket->packetHandler->vTable[1], (void*)receiveCallbackText,
+        (void**)&receivePlayStatusPacketOriginal, "ReceivePacketHook");
 
     std::shared_ptr<Packet> textPacket = SDK::createPacket((int) MinecraftPacketIds::Text);
     Memory::hookFunc((void *) textPacket->packetHandler->vTable[1], (void*)receiveCallbackText,
