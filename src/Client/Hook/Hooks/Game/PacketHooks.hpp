@@ -177,14 +177,6 @@ private:
     static void receiveCallbackEntityEvent(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
                                            const std::shared_ptr<Packet>& packet);
 
-    static void receiveCallbackInteract(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
-                                           const std::shared_ptr<Packet>& packet);
-
-    static void receiveCallbackContainerOpen(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
-                                             const std::shared_ptr<Packet>& packet);
-
-    static void receiveCallbackContainerClose(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
-                                             const std::shared_ptr<Packet>& packet);
 
     static void receiveCallbackChangeDimension(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
                                                const std::shared_ptr<Packet>& packet);
@@ -262,9 +254,6 @@ public:
     static inline receive receiveSetTitlePacketOriginal = nullptr;
     static inline receive receivePacketPlaySoundOriginal = nullptr;
     static inline receive receivePacketEntityEventOriginal = nullptr;
-    static inline receive receivePacketInteractOriginal = nullptr;
-    static inline receive receivePacketContainerOpenOriginal = nullptr;
-    static inline receive receivePacketContainerCloseOriginal = nullptr;
     static inline receive receivePacketChangeDimensionOriginal = nullptr;
     static inline receive receivePacketModalFormRequestOriginal = nullptr;
     static inline receive receivePacketPlayerSkinOriginal = nullptr;

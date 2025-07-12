@@ -565,33 +565,6 @@ void SendPacketHook::receiveCallbackEntityEvent(void *packetHandlerDispatcher, v
 
 }
 
-void SendPacketHook::receiveCallbackInteract(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
-                                             const std::shared_ptr<Packet> &packet) {
-    SendPacketHook::setVariables(packetHandlerDispatcher, networkIdentifier, netEventCallback);
-    auto event = nes::make_holder<PacketEvent>(packet.get());
-    eventMgr.trigger(event);
-    if (!event->isCancelled())
-        receivePacketInteractOriginal(packetHandlerDispatcher, networkIdentifier, netEventCallback, packet);
-}
-
-void SendPacketHook::receiveCallbackContainerOpen(void *packetHandlerDispatcher, void *networkIdentifier,
-                                                  void *netEventCallback, const std::shared_ptr<Packet> &packet) {
-    SendPacketHook::setVariables(packetHandlerDispatcher, networkIdentifier, netEventCallback);
-    auto event = nes::make_holder<PacketEvent>(packet.get());
-    eventMgr.trigger(event);
-    if (!event->isCancelled())
-        receivePacketContainerOpenOriginal(packetHandlerDispatcher, networkIdentifier, netEventCallback, packet);
-}
-
-void SendPacketHook::receiveCallbackContainerClose(void *packetHandlerDispatcher, void *networkIdentifier,
-                                                   void *netEventCallback, const std::shared_ptr<Packet> &packet) {
-    SendPacketHook::setVariables(packetHandlerDispatcher, networkIdentifier, netEventCallback);
-    auto event = nes::make_holder<PacketEvent>(packet.get());
-    eventMgr.trigger(event);
-    if (!event->isCancelled())
-        receivePacketContainerCloseOriginal(packetHandlerDispatcher, networkIdentifier, netEventCallback, packet);
-}
-
 void SendPacketHook::receiveCallbackChangeDimension(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
                                                     const std::shared_ptr<Packet>& packet) {
     SendPacketHook::setVariables(packetHandlerDispatcher, networkIdentifier, netEventCallback);
