@@ -132,7 +132,7 @@ void SendPacketHook::enableHook() {
 
 
     std::shared_ptr<Packet> playStatusPacket = SDK::createPacket((int)MinecraftPacketIds::PlayStatus);
-    Memory::hookFunc((void*)playStatusPacket->packetHandler->vTable[1], (void*)receiveCallbackText,
+    Memory::hookFunc((void*)playStatusPacket->packetHandler->vTable[1], (void*)receiveCallbackPlayStatus,
         (void**)&receivePlayStatusPacketOriginal, "ReceivePacketHook");
 
     std::shared_ptr<Packet> textPacket = SDK::createPacket((int) MinecraftPacketIds::Text);
