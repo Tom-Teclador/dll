@@ -684,7 +684,7 @@ void SendPacketHook::enableHook() {
                      (void **) &receivePacketTileEventOriginal, "ReceivePacketHook");
 
     std::shared_ptr<Packet> actorEventPacket = SDK::createPacket((int) MinecraftPacketIds::ActorEvent);
-    Memory::hookFunc((void *) actorEventtPacket->packetHandler->vTable[1], (void*)receiveCallbackActorEvent,
+    Memory::hookFunc((void *) actorEventPacket->packetHandler->vTable[1], (void*)receiveCallbackActorEvent,
                      (void **) &receivePacketActorEventOriginal, "ReceivePacketHook");
 
     std::shared_ptr<Packet> mobEffectPacket = SDK::createPacket((int) MinecraftPacketIds::MobEffect);
