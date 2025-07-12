@@ -815,10 +815,6 @@ void SendPacketHook::enableHook() {
     Memory::hookFunc((void *) EntityEventPacket->packetHandler->vTable[1], (void*)receiveCallbackEntityEvent,
                      (void **) &receivePacketEntityEventOriginal, "ReceivePacketHook");
 
-    std::shared_ptr<Packet> changeDimensionPacket = SDK::createPacket((int) MinecraftPacketIds::ChangeDimension);
-    Memory::hookFunc((void *) changeDimensionPacket->packetHandler->vTable[1], (void *)receiveCallbackChangeDimension,
-                     (void **) &receivePacketChangeDimensionOriginal, "ReceivePacketHook");
-
     std::shared_ptr<Packet> ModalFormRequestPacket = SDK::createPacket((int) MinecraftPacketIds::ShowModalForm);
     Memory::hookFunc((void *) ModalFormRequestPacket->packetHandler->vTable[1], (void *)receiveCallbackModalFormRequest,
                      (void **) &receivePacketModalFormRequestOriginal, "ReceivePacketHook");
