@@ -213,7 +213,7 @@ void SendPacketHook::receiveCallbackLevelSoundEventV1(void *packetHandlerDispatc
         receivePacketLevelSoundEventV1Original(packetHandlerDispatcher, networkIdentifier, netEventCallback, packet);
 }
 
-*//*void SendPacketHook::receiveCallbackLevelEvent(void* packetHandlerDispatcher, void* networkIdentifier, void* netEventCallback,
+*/void SendPacketHook::receiveCallbackLevelEvent(void* packetHandlerDispatcher, void* networkIdentifier, void* netEventCallback,
                                          const std::shared_ptr<Packet>& packet) {
     SendPacketHook::setVariables(packetHandlerDispatcher, networkIdentifier, netEventCallback);
 
@@ -383,7 +383,7 @@ void SendPacketHook::receiveCallbackRespawn(void *packetHandlerDispatcher, void 
         receivePacketRespawnOriginal(packetHandlerDispatcher, networkIdentifier, netEventCallback, packet);
 }
 
-*/void SendPacketHook::receiveCallbackContainerOpen(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
+void SendPacketHook::receiveCallbackContainerOpen(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
                                          const std::shared_ptr<Packet>& packet) {
     SendPacketHook::setVariables(packetHandlerDispatcher, networkIdentifier, netEventCallback);
 
@@ -463,7 +463,7 @@ void SendPacketHook::receiveCallbackContainerSetData(void *packetHandlerDispatch
         receivePacketCraftingEventOriginal(packetHandlerDispatcher, networkIdentifier, netEventCallback, packet);
 }*/
 
-/*void SendPacketHook::receiveCallbackGuiDataPickItem(void* packetHandlerDispatcher, void* networkIdentifier, void* netEventCallback,
+void SendPacketHook::receiveCallbackGuiDataPickItem(void* packetHandlerDispatcher, void* networkIdentifier, void* netEventCallback,
                                          const std::shared_ptr<Packet>& packet) {
     SendPacketHook::setVariables(packetHandlerDispatcher, networkIdentifier, netEventCallback);
 
@@ -471,7 +471,7 @@ void SendPacketHook::receiveCallbackContainerSetData(void *packetHandlerDispatch
     eventMgr.trigger(event);
     if (!event->isCancelled())
         receivePacketGuiDataPickItemOriginal(packetHandlerDispatcher, networkIdentifier, netEventCallback, packet);
-}*/
+}
 
 /*void SendPacketHook::receiveCallbackAdventureSettings_Deprecated(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
                                          const std::shared_ptr<Packet>& packet) {
@@ -675,7 +675,7 @@ void SendPacketHook::enableHook() {
     Memory::hookFunc((void *) levelSoundEventV1Packet->packetHandler->vTable[1], (void*)receiveCallbackLevelSoundEventV1,
                      (void **) &receivePacketLevelSoundEventV1Original, "ReceivePacketHook");
 
-    *//*std::shared_ptr<Packet> levelEventPacket = SDK::createPacket((int)MinecraftPacketIds::LevelEvent);
+    */std::shared_ptr<Packet> levelEventPacket = SDK::createPacket((int)MinecraftPacketIds::LevelEvent);
     Memory::hookFunc((void *) levelEventPacket->packetHandler->vTable[1], (void*)receiveCallbackLevelEvent,
                      (void **) &receivePacketLevelEventOriginal, "ReceivePacketHook");
 
@@ -743,7 +743,7 @@ void SendPacketHook::enableHook() {
     Memory::hookFunc((void *) respawnPacket->packetHandler->vTable[1], (void*)receiveCallbackRespawn,
                      (void **) &receivePacketRespawnOriginal, "ReceivePacketHook");
 
-    */std::shared_ptr<Packet> containerOpenPacket = SDK::createPacket((int)MinecraftPacketIds::ContainerOpen);
+    std::shared_ptr<Packet> containerOpenPacket = SDK::createPacket((int)MinecraftPacketIds::ContainerOpen);
     Memory::hookFunc((void *) containerOpenPacket->packetHandler->vTable[1], (void*)receiveCallbackContainerOpen,
                      (void **) &receivePacketContainerOpenOriginal, "ReceivePacketHook");
 
@@ -775,9 +775,9 @@ void SendPacketHook::enableHook() {
     Memory::hookFunc((void *) craftingEventPacket->packetHandler->vTable[1], (void*)receiveCallbackCraftingEvent,
                      (void **) &receivePacketCraftingEventOriginal, "ReceivePacketHook");*/
 
-    /*std::shared_ptr<Packet> guiDataPickItemPacket = SDK::createPacket((int)MinecraftPacketIds::GuiDataPickItem);
+    std::shared_ptr<Packet> guiDataPickItemPacket = SDK::createPacket((int)MinecraftPacketIds::GuiDataPickItem);
     Memory::hookFunc((void *) guiDataPickItemPacket->packetHandler->vTable[1], (void*)receiveCallbackGuiDataPickItem,
-                     (void **) &receivePacketGuiDataPickItemOriginal, "ReceivePacketHook");*/
+                     (void **) &receivePacketGuiDataPickItemOriginal, "ReceivePacketHook");
 
     /*std::shared_ptr<Packet> adventureSettings_DeprecatedPacket = SDK::createPacket((int)MinecraftPacketIds::AdventureSettings_Deprecated);
     Memory::hookFunc((void *) adventureSettings_DeprecatedPacket->packetHandler->vTable[1], (void*)receiveCallbackAdventureSettings_Deprecated,

@@ -72,7 +72,7 @@ private:
     static void receiveCallbackLevelSoundEventV1(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
                                     const std::shared_ptr<Packet>& packet);
 
-    *//*static void receiveCallbackLevelEvent(void* packetHandlerDispatcher, void* networkIdentifier, void* netEventCallback,
+    */static void receiveCallbackLevelEvent(void* packetHandlerDispatcher, void* networkIdentifier, void* netEventCallback,
                                     const std::shared_ptr<Packet>& packet);
 
     static void receiveCallbackTileEvent(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
@@ -123,7 +123,7 @@ private:
     static void receiveCallbackRespawn(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
                                     const std::shared_ptr<Packet>& packet);
 
-    */static void receiveCallbackContainerOpen(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
+    static void receiveCallbackContainerOpen(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
                                     const std::shared_ptr<Packet>& packet);
 
     static void receiveCallbackContainerClose(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
@@ -147,8 +147,8 @@ private:
     //static void receiveCallbackCraftingEvent(void* packetHandlerDispatcher, void* networkIdentifier, void* netEventCallback,
     //                                const std::shared_ptr<Packet>& packet);
 
-    /*static void receiveCallbackGuiDataPickItem(void* packetHandlerDispatcher, void* networkIdentifier, void* netEventCallback,
-                                    const std::shared_ptr<Packet>& packet);*/
+    static void receiveCallbackGuiDataPickItem(void* packetHandlerDispatcher, void* networkIdentifier, void* netEventCallback,
+                                    const std::shared_ptr<Packet>& packet);
 
     /*static void receiveCallbackAdventureSettings_Deprecated(void* packetHandlerDispatcher, void* networkIdentifier, void* netEventCallback,
                                     const std::shared_ptr<Packet>& packet);*/
@@ -215,7 +215,7 @@ public:
     static inline receive receivePacketAddPaintingOriginal = nullptr;
     static inline receive receivePacketTickSyncOriginal = nullptr;
     static inline receive receivePacketLevelSoundEventV1Original = nullptr;
-    *//*static inline receive receivePacketLevelEventOriginal = nullptr;
+    */static inline receive receivePacketLevelEventOriginal = nullptr;
     static inline receive receivePacketTileEventOriginal = nullptr;
     static inline receive receivePacketActorEventOriginal = nullptr;
     static inline receive receivePacketMobEffectOriginal = nullptr;
@@ -232,7 +232,7 @@ public:
     static inline receive receivePacketSetSpawnPositionOriginal = nullptr;
     static inline receive receivePacketAnimateOriginal = nullptr;
     static inline receive receivePacketRespawnOriginal = nullptr;
-    */static inline receive receivePacketContainerOpenOriginal = nullptr;
+    static inline receive receivePacketContainerOpenOriginal = nullptr;
     static inline receive receivePacketContainerCloseOriginal = nullptr;
     static inline receive receivePacketPlayerHotbarOriginal = nullptr;
     static inline receive receivePacketInventoryContentOriginal = nullptr;
@@ -240,7 +240,7 @@ public:
     static inline receive receivePacketContainerSetDataOriginal = nullptr;
     //static inline receive receivePacketCraftingDataOriginal = nullptr;
     //static inline receive receivePacketCraftingEventOriginal = nullptr;
-    /*static inline receive receivePacketGuiDataPickItemOriginal = nullptr; */
+    static inline receive receivePacketGuiDataPickItemOriginal = nullptr;
     /*static inline receive receivePacketAdventureSettings_DeprecatedOriginal = nullptr; */
     static inline receive receivePacketBlockActorDataOriginal = nullptr;
     static inline receive receivePacketFullChunkDataOriginal = nullptr;
