@@ -423,7 +423,7 @@ void SendPacketHook::receiveCallbackInventoryContent(void *packetHandlerDispatch
         receivePacketInventoryContentOriginal(packetHandlerDispatcher, networkIdentifier, netEventCallback, packet);
 }
 
-/*void SendPacketHook::receiveCallbackInventorySlot(void* packetHandlerDispatcher, void* networkIdentifier, void* netEventCallback,
+void SendPacketHook::receiveCallbackInventorySlot(void* packetHandlerDispatcher, void* networkIdentifier, void* netEventCallback,
                                          const std::shared_ptr<Packet>& packet) {
     SendPacketHook::setVariables(packetHandlerDispatcher, networkIdentifier, netEventCallback);
 
@@ -443,7 +443,7 @@ void SendPacketHook::receiveCallbackContainerSetData(void *packetHandlerDispatch
         receivePacketContainerSetDataOriginal(packetHandlerDispatcher, networkIdentifier, netEventCallback, packet);
 }
 
-void SendPacketHook::receiveCallbackCraftingData(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
+/*void SendPacketHook::receiveCallbackCraftingData(void* packetHandlerDispatcher, void* networkIdentifier, void* netEventCallback,
                                          const std::shared_ptr<Packet>& packet) {
     SendPacketHook::setVariables(packetHandlerDispatcher, networkIdentifier, netEventCallback);
 
@@ -759,11 +759,11 @@ void SendPacketHook::enableHook() {
     Memory::hookFunc((void *) inventoryContentPacket->packetHandler->vTable[1], (void*)receiveCallbackInventoryContent,
                      (void **) &receivePacketInventoryContentOriginal, "ReceivePacketHook");
 
-    /*std::shared_ptr<Packet> inventorySlotPacket = SDK::createPacket((int)MinecraftPacketIds::InventorySlot);
+    std::shared_ptr<Packet> inventorySlotPacket = SDK::createPacket((int)MinecraftPacketIds::InventorySlot);
     Memory::hookFunc((void *) inventorySlotPacket->packetHandler->vTable[1], (void*)receiveCallbackInventorySlot,
                      (void **) &receivePacketInventorySlotOriginal, "ReceivePacketHook");
 
-    std::shared_ptr<Packet> containerSetDataPacket = SDK::createPacket((int) MinecraftPacketIds::ContainerSetData);
+    /*std::shared_ptr<Packet> containerSetDataPacket = SDK::createPacket((int)MinecraftPacketIds::ContainerSetData);
     Memory::hookFunc((void *) containerSetDataPacket->packetHandler->vTable[1], (void*)receiveCallbackContainerSetData,
                      (void **) &receivePacketContainerSetDataOriginal, "ReceivePacketHook");
 
