@@ -129,13 +129,13 @@ private:
     static void receiveCallbackContainerClose(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
                                     const std::shared_ptr<Packet>& packet);
 
-    /*static void receiveCallbackPlayerHotbar(void* packetHandlerDispatcher, void* networkIdentifier, void* netEventCallback,
+    static void receiveCallbackPlayerHotbar(void* packetHandlerDispatcher, void* networkIdentifier, void* netEventCallback,
                                     const std::shared_ptr<Packet>& packet);
 
     static void receiveCallbackInventoryContent(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
                                     const std::shared_ptr<Packet>& packet);
 
-    static void receiveCallbackInventorySlot(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
+    /*static void receiveCallbackInventorySlot(void* packetHandlerDispatcher, void* networkIdentifier, void* netEventCallback,
                                     const std::shared_ptr<Packet>& packet);
 
     static void receiveCallbackContainerSetData(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
@@ -234,9 +234,9 @@ public:
     static inline receive receivePacketRespawnOriginal = nullptr;
     */static inline receive receivePacketContainerOpenOriginal = nullptr;
     static inline receive receivePacketContainerCloseOriginal = nullptr;
-    /*static inline receive receivePacketPlayerHotbarOriginal = nullptr;
+    static inline receive receivePacketPlayerHotbarOriginal = nullptr;
     static inline receive receivePacketInventoryContentOriginal = nullptr;
-    static inline receive receivePacketInventorySlotOriginal = nullptr;
+    /*static inline receive receivePacketInventorySlotOriginal = nullptr;
     static inline receive receivePacketContainerSetDataOriginal = nullptr;
     static inline receive receivePacketCraftingDataOriginal = nullptr;
     static inline receive receivePacketCraftingEventOriginal = nullptr;

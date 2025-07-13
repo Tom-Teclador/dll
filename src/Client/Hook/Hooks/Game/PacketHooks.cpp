@@ -403,7 +403,7 @@ void SendPacketHook::receiveCallbackContainerClose(void *packetHandlerDispatcher
         receivePacketContainerCloseOriginal(packetHandlerDispatcher, networkIdentifier, netEventCallback, packet);
 }
 
-/*void SendPacketHook::receiveCallbackPlayerHotbar(void* packetHandlerDispatcher, void* networkIdentifier, void* netEventCallback,
+void SendPacketHook::receiveCallbackPlayerHotbar(void* packetHandlerDispatcher, void* networkIdentifier, void* netEventCallback,
                                          const std::shared_ptr<Packet>& packet) {
     SendPacketHook::setVariables(packetHandlerDispatcher, networkIdentifier, netEventCallback);
 
@@ -423,7 +423,7 @@ void SendPacketHook::receiveCallbackInventoryContent(void *packetHandlerDispatch
         receivePacketInventoryContentOriginal(packetHandlerDispatcher, networkIdentifier, netEventCallback, packet);
 }
 
-void SendPacketHook::receiveCallbackInventorySlot(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
+/*void SendPacketHook::receiveCallbackInventorySlot(void* packetHandlerDispatcher, void* networkIdentifier, void* netEventCallback,
                                          const std::shared_ptr<Packet>& packet) {
     SendPacketHook::setVariables(packetHandlerDispatcher, networkIdentifier, netEventCallback);
 
@@ -751,7 +751,7 @@ void SendPacketHook::enableHook() {
     Memory::hookFunc((void *) containerClosePacket->packetHandler->vTable[1], (void*)receiveCallbackContainerClose,
                      (void **) &receivePacketContainerCloseOriginal, "ReceivePacketHook");
 
-    /*std::shared_ptr<Packet> playerHotbarPacket = SDK::createPacket((int)MinecraftPacketIds::PlayerHotbar);
+    std::shared_ptr<Packet> playerHotbarPacket = SDK::createPacket((int)MinecraftPacketIds::PlayerHotbar);
     Memory::hookFunc((void *) playerHotbarPacket->packetHandler->vTable[1], (void*)receiveCallbackPlayerHotbar,
                      (void **) &receivePacketPlayerHotbarOriginal, "ReceivePacketHook");
 
@@ -759,7 +759,7 @@ void SendPacketHook::enableHook() {
     Memory::hookFunc((void *) inventoryContentPacket->packetHandler->vTable[1], (void*)receiveCallbackInventoryContent,
                      (void **) &receivePacketInventoryContentOriginal, "ReceivePacketHook");
 
-    std::shared_ptr<Packet> inventorySlotPacket = SDK::createPacket((int) MinecraftPacketIds::InventorySlot);
+    /*std::shared_ptr<Packet> inventorySlotPacket = SDK::createPacket((int)MinecraftPacketIds::InventorySlot);
     Memory::hookFunc((void *) inventorySlotPacket->packetHandler->vTable[1], (void*)receiveCallbackInventorySlot,
                      (void **) &receivePacketInventorySlotOriginal, "ReceivePacketHook");
 
