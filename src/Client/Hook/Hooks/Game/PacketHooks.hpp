@@ -144,8 +144,8 @@ private:
     static void receiveCallbackCraftingData(void* packetHandlerDispatcher, void* networkIdentifier, void* netEventCallback,
                                     const std::shared_ptr<Packet>& packet);
 
-    static void receiveCallbackCraftingEvent(void* packetHandlerDispatcher, void* networkIdentifier, void* netEventCallback,
-                                    const std::shared_ptr<Packet>& packet);
+    //static void receiveCallbackCraftingEvent(void* packetHandlerDispatcher, void* networkIdentifier, void* netEventCallback,
+    //                                const std::shared_ptr<Packet>& packet);
 
     /*static void receiveCallbackGuiDataPickItem(void* packetHandlerDispatcher, void* networkIdentifier, void* netEventCallback,
                                     const std::shared_ptr<Packet>& packet);*/
@@ -239,7 +239,7 @@ public:
     static inline receive receivePacketInventorySlotOriginal = nullptr;
     static inline receive receivePacketContainerSetDataOriginal = nullptr;
     static inline receive receivePacketCraftingDataOriginal = nullptr;
-    static inline receive receivePacketCraftingEventOriginal = nullptr;
+    //static inline receive receivePacketCraftingEventOriginal = nullptr;
     /*static inline receive receivePacketGuiDataPickItemOriginal = nullptr; */
     /*static inline receive receivePacketAdventureSettings_DeprecatedOriginal = nullptr; */
     static inline receive receivePacketBlockActorDataOriginal = nullptr;
