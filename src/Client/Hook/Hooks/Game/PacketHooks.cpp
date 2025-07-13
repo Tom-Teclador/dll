@@ -443,7 +443,7 @@ void SendPacketHook::receiveCallbackContainerSetData(void *packetHandlerDispatch
         receivePacketContainerSetDataOriginal(packetHandlerDispatcher, networkIdentifier, netEventCallback, packet);
 }
 
-/*void SendPacketHook::receiveCallbackCraftingData(void* packetHandlerDispatcher, void* networkIdentifier, void* netEventCallback,
+void SendPacketHook::receiveCallbackCraftingData(void* packetHandlerDispatcher, void* networkIdentifier, void* netEventCallback,
                                          const std::shared_ptr<Packet>& packet) {
     SendPacketHook::setVariables(packetHandlerDispatcher, networkIdentifier, netEventCallback);
 
@@ -453,7 +453,7 @@ void SendPacketHook::receiveCallbackContainerSetData(void *packetHandlerDispatch
         receivePacketCraftingDataOriginal(packetHandlerDispatcher, networkIdentifier, netEventCallback, packet);
 }
 
-void SendPacketHook::receiveCallbackCraftingEvent(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
+/*void SendPacketHook::receiveCallbackCraftingEvent(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
                                          const std::shared_ptr<Packet>& packet) {
     SendPacketHook::setVariables(packetHandlerDispatcher, networkIdentifier, netEventCallback);
 
@@ -763,7 +763,7 @@ void SendPacketHook::enableHook() {
     Memory::hookFunc((void *) inventorySlotPacket->packetHandler->vTable[1], (void*)receiveCallbackInventorySlot,
                      (void **) &receivePacketInventorySlotOriginal, "ReceivePacketHook");
 
-    /*std::shared_ptr<Packet> containerSetDataPacket = SDK::createPacket((int)MinecraftPacketIds::ContainerSetData);
+    std::shared_ptr<Packet> containerSetDataPacket = SDK::createPacket((int)MinecraftPacketIds::ContainerSetData);
     Memory::hookFunc((void *) containerSetDataPacket->packetHandler->vTable[1], (void*)receiveCallbackContainerSetData,
                      (void **) &receivePacketContainerSetDataOriginal, "ReceivePacketHook");
 
@@ -771,7 +771,7 @@ void SendPacketHook::enableHook() {
     Memory::hookFunc((void *) craftingDataPacket->packetHandler->vTable[1], (void*)receiveCallbackCraftingData,
                      (void **) &receivePacketCraftingDataOriginal, "ReceivePacketHook");
 
-    std::shared_ptr<Packet> craftingEventPacket = SDK::createPacket((int) MinecraftPacketIds::CraftingEvent);
+    /*std::shared_ptr<Packet> craftingEventPacket = SDK::createPacket((int)MinecraftPacketIds::CraftingEvent);
     Memory::hookFunc((void *) craftingEventPacket->packetHandler->vTable[1], (void*)receiveCallbackCraftingEvent,
                      (void **) &receivePacketCraftingEventOriginal, "ReceivePacketHook");
 
