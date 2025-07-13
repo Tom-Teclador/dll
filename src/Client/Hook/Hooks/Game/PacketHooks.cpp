@@ -301,7 +301,7 @@ void SendPacketHook::receiveCallbackInteract(void *packetHandlerDispatcher, void
     eventMgr.trigger(event);
     if (!event->isCancelled())
         receivePacketInteractOriginal(packetHandlerDispatcher, networkIdentifier, netEventCallback, packet);
-}*//*
+}
 
 void SendPacketHook::receiveCallbackHurtArmor(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
                                          const std::shared_ptr<Packet>& packet) {
@@ -709,7 +709,7 @@ void SendPacketHook::enableHook() {
 
     std::shared_ptr<Packet> interactPacket = SDK::createPacket((int) MinecraftPacketIds::Interact);
     Memory::hookFunc((void *) interactPacket->packetHandler->vTable[1], (void*)receiveCallbackInteract,
-                     (void **) &receivePacketInteractOriginal, "ReceivePacketHook");*//*
+                     (void **) &receivePacketInteractOriginal, "ReceivePacketHook");
 
     std::shared_ptr<Packet> hurtArmorPacket = SDK::createPacket((int) MinecraftPacketIds::HurtArmor);
     Memory::hookFunc((void *) hurtArmorPacket->packetHandler->vTable[1], (void*)receiveCallbackHurtArmor,

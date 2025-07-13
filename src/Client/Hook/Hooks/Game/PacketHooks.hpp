@@ -97,7 +97,7 @@ private:
                                     const std::shared_ptr<Packet>& packet);
 
     static void receiveCallbackInteract(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
-                                    const std::shared_ptr<Packet>& packet);*//*
+                                    const std::shared_ptr<Packet>& packet);
 
     static void receiveCallbackHurtArmor(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
                                     const std::shared_ptr<Packet>& packet);
@@ -223,7 +223,7 @@ public:
     static inline receive receivePacketInventoryTransactionOriginal = nullptr;
     static inline receive receivePacketPlayerEquipmentOriginal = nullptr;
     static inline receive receivePacketMobArmorEquipmentOriginal = nullptr;
-    static inline receive receivePacketInteractOriginal = nullptr;*//*
+    static inline receive receivePacketInteractOriginal = nullptr;
     static inline receive receivePacketHurtArmorOriginal = nullptr;
     static inline receive receivePacketSetActorDataOriginal = nullptr;
     static inline receive receivePacketSetActorMotionOriginal = nullptr;
