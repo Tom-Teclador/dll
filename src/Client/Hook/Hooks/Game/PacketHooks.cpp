@@ -403,7 +403,7 @@ void SendPacketHook::receiveCallbackContainerClose(void *packetHandlerDispatcher
         receivePacketContainerCloseOriginal(packetHandlerDispatcher, networkIdentifier, netEventCallback, packet);
 }
 
-void SendPacketHook::receiveCallbackPlayerHotbar(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
+/*void SendPacketHook::receiveCallbackPlayerHotbar(void* packetHandlerDispatcher, void* networkIdentifier, void* netEventCallback,
                                          const std::shared_ptr<Packet>& packet) {
     SendPacketHook::setVariables(packetHandlerDispatcher, networkIdentifier, netEventCallback);
 
@@ -471,7 +471,7 @@ void SendPacketHook::receiveCallbackGuiDataPickItem(void *packetHandlerDispatche
     eventMgr.trigger(event);
     if (!event->isCancelled())
         receivePacketGuiDataPickItemOriginal(packetHandlerDispatcher, networkIdentifier, netEventCallback, packet);
-}
+}*/
 
 /*void SendPacketHook::receiveCallbackAdventureSettings_Deprecated(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
                                          const std::shared_ptr<Packet>& packet) {
@@ -743,7 +743,7 @@ void SendPacketHook::enableHook() {
     Memory::hookFunc((void *) respawnPacket->packetHandler->vTable[1], (void*)receiveCallbackRespawn,
                      (void **) &receivePacketRespawnOriginal, "ReceivePacketHook");
 
-    */std::shared_ptr<Packet> containerOpenPacket = SDK::createPacket((int) MinecraftPacketIds::ContainerOpen);
+    */std::shared_ptr<Packet> containerOpenPacket = SDK::createPacket((int)MinecraftPacketIds::ContainerOpen);
     Memory::hookFunc((void *) containerOpenPacket->packetHandler->vTable[1], (void*)receiveCallbackContainerOpen,
                      (void **) &receivePacketContainerOpenOriginal, "ReceivePacketHook");
 
@@ -751,7 +751,7 @@ void SendPacketHook::enableHook() {
     Memory::hookFunc((void *) containerClosePacket->packetHandler->vTable[1], (void*)receiveCallbackContainerClose,
                      (void **) &receivePacketContainerCloseOriginal, "ReceivePacketHook");
 
-    std::shared_ptr<Packet> playerHotbarPacket = SDK::createPacket((int) MinecraftPacketIds::PlayerHotbar);
+    /*std::shared_ptr<Packet> playerHotbarPacket = SDK::createPacket((int)MinecraftPacketIds::PlayerHotbar);
     Memory::hookFunc((void *) playerHotbarPacket->packetHandler->vTable[1], (void*)receiveCallbackPlayerHotbar,
                      (void **) &receivePacketPlayerHotbarOriginal, "ReceivePacketHook");
 
@@ -777,7 +777,7 @@ void SendPacketHook::enableHook() {
 
     std::shared_ptr<Packet> guiDataPickItemPacket = SDK::createPacket((int) MinecraftPacketIds::GuiDataPickItem);
     Memory::hookFunc((void *) guiDataPickItemPacket->packetHandler->vTable[1], (void*)receiveCallbackGuiDataPickItem,
-                     (void **) &receivePacketGuiDataPickItemOriginal, "ReceivePacketHook");
+                     (void **) &receivePacketGuiDataPickItemOriginal, "ReceivePacketHook");*/
 
     /*std::shared_ptr<Packet> adventureSettings_DeprecatedPacket = SDK::createPacket((int)MinecraftPacketIds::AdventureSettings_Deprecated);
     Memory::hookFunc((void *) adventureSettings_DeprecatedPacket->packetHandler->vTable[1], (void*)receiveCallbackAdventureSettings_Deprecated,

@@ -129,7 +129,7 @@ private:
     static void receiveCallbackContainerClose(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
                                     const std::shared_ptr<Packet>& packet);
 
-    static void receiveCallbackPlayerHotbar(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
+    /*static void receiveCallbackPlayerHotbar(void* packetHandlerDispatcher, void* networkIdentifier, void* netEventCallback,
                                     const std::shared_ptr<Packet>& packet);
 
     static void receiveCallbackInventoryContent(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
@@ -148,7 +148,7 @@ private:
                                     const std::shared_ptr<Packet>& packet);
 
     static void receiveCallbackGuiDataPickItem(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
-                                    const std::shared_ptr<Packet>& packet);
+                                    const std::shared_ptr<Packet>& packet);*/
 
     /*static void receiveCallbackAdventureSettings_Deprecated(void* packetHandlerDispatcher, void* networkIdentifier, void* netEventCallback,
                                     const std::shared_ptr<Packet>& packet);*/
@@ -234,13 +234,13 @@ public:
     static inline receive receivePacketRespawnOriginal = nullptr;
     */static inline receive receivePacketContainerOpenOriginal = nullptr;
     static inline receive receivePacketContainerCloseOriginal = nullptr;
-    static inline receive receivePacketPlayerHotbarOriginal = nullptr;
+    /*static inline receive receivePacketPlayerHotbarOriginal = nullptr;
     static inline receive receivePacketInventoryContentOriginal = nullptr;
     static inline receive receivePacketInventorySlotOriginal = nullptr;
     static inline receive receivePacketContainerSetDataOriginal = nullptr;
     static inline receive receivePacketCraftingDataOriginal = nullptr;
     static inline receive receivePacketCraftingEventOriginal = nullptr;
-    static inline receive receivePacketGuiDataPickItemOriginal = nullptr;
+    static inline receive receivePacketGuiDataPickItemOriginal = nullptr;*/
     /*static inline receive receivePacketAdventureSettings_DeprecatedOriginal = nullptr; */
     static inline receive receivePacketBlockActorDataOriginal = nullptr;
     static inline receive receivePacketFullChunkDataOriginal = nullptr;
