@@ -72,7 +72,7 @@ private:
     static void receiveCallbackLevelSoundEventV1(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
                                     const std::shared_ptr<Packet>& packet);
 
-    */static void receiveCallbackLevelEvent(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
+    *//*static void receiveCallbackLevelEvent(void* packetHandlerDispatcher, void* networkIdentifier, void* netEventCallback,
                                     const std::shared_ptr<Packet>& packet);
 
     static void receiveCallbackTileEvent(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
@@ -97,7 +97,7 @@ private:
                                     const std::shared_ptr<Packet>& packet);
 
     static void receiveCallbackInteract(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
-                                    const std::shared_ptr<Packet>& packet);/*
+                                    const std::shared_ptr<Packet>& packet);*//*
 
     static void receiveCallbackHurtArmor(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
                                     const std::shared_ptr<Packet>& packet);
@@ -215,7 +215,7 @@ public:
     static inline receive receivePacketAddPaintingOriginal = nullptr;
     static inline receive receivePacketTickSyncOriginal = nullptr;
     static inline receive receivePacketLevelSoundEventV1Original = nullptr;
-    */static inline receive receivePacketLevelEventOriginal = nullptr;
+    *//*static inline receive receivePacketLevelEventOriginal = nullptr;
     static inline receive receivePacketTileEventOriginal = nullptr;
     static inline receive receivePacketActorEventOriginal = nullptr;
     static inline receive receivePacketMobEffectOriginal = nullptr;
@@ -223,7 +223,7 @@ public:
     static inline receive receivePacketInventoryTransactionOriginal = nullptr;
     static inline receive receivePacketPlayerEquipmentOriginal = nullptr;
     static inline receive receivePacketMobArmorEquipmentOriginal = nullptr;
-    static inline receive receivePacketInteractOriginal = nullptr;/*
+    static inline receive receivePacketInteractOriginal = nullptr;*//*
     static inline receive receivePacketHurtArmorOriginal = nullptr;
     static inline receive receivePacketSetActorDataOriginal = nullptr;
     static inline receive receivePacketSetActorMotionOriginal = nullptr;
