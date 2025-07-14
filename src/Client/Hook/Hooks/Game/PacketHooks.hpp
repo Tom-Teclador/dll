@@ -333,6 +333,7 @@ public:
     static inline receive receivePacketStructureBlockUpdateOriginal = nullptr;
     static inline receive receivePacketShowStoreOfferOriginal = nullptr;
     static inline receive receivePacketSetLastHurtByOriginal = nullptr;
+    static inline receive receivePacketNPCRequestOriginal = nullptr;
     static inline receive receivePacketChangeDimensionOriginal = nullptr;
     static inline receive receivePacketSetTitleOriginal = nullptr;
     static inline receive receivePacketPlaySoundOriginal = nullptr;
