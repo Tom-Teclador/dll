@@ -523,6 +523,246 @@ void SendPacketHook::receiveCallbackSetDifficulty(void *packetHandlerDispatcher,
         receivePacketSetDifficultyOriginal(packetHandlerDispatcher, networkIdentifier, netEventCallback, packet);
 }
 
+void SendPacketHook::receiveCallbackSetPlayerGameType(void* packetHandlerDispatcher, void* networkIdentifier, void* netEventCallback,
+                                         const std::shared_ptr<Packet>& packet) {
+    SendPacketHook::setVariables(packetHandlerDispatcher, networkIdentifier, netEventCallback);
+
+    auto event = nes::make_holder<PacketEvent>(packet.get());
+    eventMgr.trigger(event);
+    if (!event->isCancelled())
+        receivePacketSetPlayerGameTypeOriginal(packetHandlerDispatcher, networkIdentifier, netEventCallback, packet);
+}
+
+void SendPacketHook::receiveCallbackPlayerList(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
+                                         const std::shared_ptr<Packet>& packet) {
+    SendPacketHook::setVariables(packetHandlerDispatcher, networkIdentifier, netEventCallback);
+
+    auto event = nes::make_holder<PacketEvent>(packet.get());
+    eventMgr.trigger(event);
+    if (!event->isCancelled())
+        receivePacketPlayerListOriginal(packetHandlerDispatcher, networkIdentifier, netEventCallback, packet);
+}
+
+void SendPacketHook::receiveCallbackSimpleEvent(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
+                                         const std::shared_ptr<Packet>& packet) {
+    SendPacketHook::setVariables(packetHandlerDispatcher, networkIdentifier, netEventCallback);
+
+    auto event = nes::make_holder<PacketEvent>(packet.get());
+    eventMgr.trigger(event);
+    if (!event->isCancelled())
+        receivePacketSimpleEventOriginal(packetHandlerDispatcher, networkIdentifier, netEventCallback, packet);
+}
+
+void SendPacketHook::receiveCallbackMapData(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
+                                         const std::shared_ptr<Packet>& packet) {
+    SendPacketHook::setVariables(packetHandlerDispatcher, networkIdentifier, netEventCallback);
+
+    auto event = nes::make_holder<PacketEvent>(packet.get());
+    eventMgr.trigger(event);
+    if (!event->isCancelled())
+        receivePacketMapDataOriginal(packetHandlerDispatcher, networkIdentifier, netEventCallback, packet);
+}
+
+void SendPacketHook::receiveCallbackMapInfoRequest(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
+                                         const std::shared_ptr<Packet>& packet) {
+    SendPacketHook::setVariables(packetHandlerDispatcher, networkIdentifier, netEventCallback);
+
+    auto event = nes::make_holder<PacketEvent>(packet.get());
+    eventMgr.trigger(event);
+    if (!event->isCancelled())
+        receivePacketMapInfoRequestOriginal(packetHandlerDispatcher, networkIdentifier, netEventCallback, packet);
+}
+
+void SendPacketHook::receiveCallbackRequestChunkRadius(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
+                                         const std::shared_ptr<Packet>& packet) {
+    SendPacketHook::setVariables(packetHandlerDispatcher, networkIdentifier, netEventCallback);
+
+    auto event = nes::make_holder<PacketEvent>(packet.get());
+    eventMgr.trigger(event);
+    if (!event->isCancelled())
+        receivePacketRequestChunkRadiusOriginal(packetHandlerDispatcher, networkIdentifier, netEventCallback, packet);
+}
+
+void SendPacketHook::receiveCallbackChunkRadiusUpdated(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
+                                         const std::shared_ptr<Packet>& packet) {
+    SendPacketHook::setVariables(packetHandlerDispatcher, networkIdentifier, netEventCallback);
+
+    auto event = nes::make_holder<PacketEvent>(packet.get());
+    eventMgr.trigger(event);
+    if (!event->isCancelled())
+        receivePacketChunkRadiusUpdatedOriginal(packetHandlerDispatcher, networkIdentifier, netEventCallback, packet);
+}
+
+void SendPacketHook::receiveCallbackGameRulesChanged(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
+                                         const std::shared_ptr<Packet>& packet) {
+    SendPacketHook::setVariables(packetHandlerDispatcher, networkIdentifier, netEventCallback);
+
+    auto event = nes::make_holder<PacketEvent>(packet.get());
+    eventMgr.trigger(event);
+    if (!event->isCancelled())
+        receivePacketGameRulesChangedOriginal(packetHandlerDispatcher, networkIdentifier, netEventCallback, packet);
+}
+
+void SendPacketHook::receiveCallbackBossEvent(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
+                                         const std::shared_ptr<Packet>& packet) {
+    SendPacketHook::setVariables(packetHandlerDispatcher, networkIdentifier, netEventCallback);
+
+    auto event = nes::make_holder<PacketEvent>(packet.get());
+    eventMgr.trigger(event);
+    if (!event->isCancelled())
+        receivePacketBossEventOriginal(packetHandlerDispatcher, networkIdentifier, netEventCallback, packet);
+}
+
+void SendPacketHook::receiveCallbackShowCredits(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
+                                         const std::shared_ptr<Packet>& packet) {
+    SendPacketHook::setVariables(packetHandlerDispatcher, networkIdentifier, netEventCallback);
+
+    auto event = nes::make_holder<PacketEvent>(packet.get());
+    eventMgr.trigger(event);
+    if (!event->isCancelled())
+        receivePacketShowCreditsOriginal(packetHandlerDispatcher, networkIdentifier, netEventCallback, packet);
+}
+
+void SendPacketHook::receiveCallbackCommandOutput(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
+                                         const std::shared_ptr<Packet>& packet) {
+    SendPacketHook::setVariables(packetHandlerDispatcher, networkIdentifier, netEventCallback);
+
+    auto event = nes::make_holder<PacketEvent>(packet.get());
+    eventMgr.trigger(event);
+    if (!event->isCancelled())
+        receivePacketCommandOutputOriginal(packetHandlerDispatcher, networkIdentifier, netEventCallback, packet);
+}
+
+void SendPacketHook::receiveCallbackUpdateTrade(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
+                                         const std::shared_ptr<Packet>& packet) {
+    SendPacketHook::setVariables(packetHandlerDispatcher, networkIdentifier, netEventCallback);
+
+    auto event = nes::make_holder<PacketEvent>(packet.get());
+    eventMgr.trigger(event);
+    if (!event->isCancelled())
+        receivePacketUpdateTradeOriginal(packetHandlerDispatcher, networkIdentifier, netEventCallback, packet);
+}
+
+void SendPacketHook::receiveCallbackUpdateEquip(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
+                                         const std::shared_ptr<Packet>& packet) {
+    SendPacketHook::setVariables(packetHandlerDispatcher, networkIdentifier, netEventCallback);
+
+    auto event = nes::make_holder<PacketEvent>(packet.get());
+    eventMgr.trigger(event);
+    if (!event->isCancelled())
+        receivePacketUpdateEquipOriginal(packetHandlerDispatcher, networkIdentifier, netEventCallback, packet);
+}
+
+void SendPacketHook::receiveCallbackResourcePackDataInfo(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
+                                         const std::shared_ptr<Packet>& packet) {
+    SendPacketHook::setVariables(packetHandlerDispatcher, networkIdentifier, netEventCallback);
+
+    auto event = nes::make_holder<PacketEvent>(packet.get());
+    eventMgr.trigger(event);
+    if (!event->isCancelled())
+        receivePacketResourcePackDataInfoOriginal(packetHandlerDispatcher, networkIdentifier, netEventCallback, packet);
+}
+
+void SendPacketHook::receiveCallbackResourcePackChunkData(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
+                                         const std::shared_ptr<Packet>& packet) {
+    SendPacketHook::setVariables(packetHandlerDispatcher, networkIdentifier, netEventCallback);
+
+    auto event = nes::make_holder<PacketEvent>(packet.get());
+    eventMgr.trigger(event);
+    if (!event->isCancelled())
+        receivePacketResourcePackChunkDataOriginal(packetHandlerDispatcher, networkIdentifier, netEventCallback, packet);
+}
+
+void SendPacketHook::receiveCallbackTransfer(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
+                                         const std::shared_ptr<Packet>& packet) {
+    SendPacketHook::setVariables(packetHandlerDispatcher, networkIdentifier, netEventCallback);
+
+    auto event = nes::make_holder<PacketEvent>(packet.get());
+    eventMgr.trigger(event);
+    if (!event->isCancelled())
+        receivePacketTransferOriginal(packetHandlerDispatcher, networkIdentifier, netEventCallback, packet);
+}
+
+void SendPacketHook::receiveCallbackPlaySound(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
+                                         const std::shared_ptr<Packet>& packet) {
+    SendPacketHook::setVariables(packetHandlerDispatcher, networkIdentifier, netEventCallback);
+
+    auto event = nes::make_holder<PacketEvent>(packet.get());
+    eventMgr.trigger(event);
+    if (!event->isCancelled())
+        receivePacketPlaySoundOriginal(packetHandlerDispatcher, networkIdentifier, netEventCallback, packet);
+}
+
+void SendPacketHook::receiveCallbackStopSound(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
+                                         const std::shared_ptr<Packet>& packet) {
+    SendPacketHook::setVariables(packetHandlerDispatcher, networkIdentifier, netEventCallback);
+
+    auto event = nes::make_holder<PacketEvent>(packet.get());
+    eventMgr.trigger(event);
+    if (!event->isCancelled())
+        receivePacketStopSoundOriginal(packetHandlerDispatcher, networkIdentifier, netEventCallback, packet);
+}
+
+void SendPacketHook::receiveCallbackAddBehaviorTree(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
+                                         const std::shared_ptr<Packet>& packet) {
+    SendPacketHook::setVariables(packetHandlerDispatcher, networkIdentifier, netEventCallback);
+
+    auto event = nes::make_holder<PacketEvent>(packet.get());
+    eventMgr.trigger(event);
+    if (!event->isCancelled())
+        receivePacketAddBehaviorTreeOriginal(packetHandlerDispatcher, networkIdentifier, netEventCallback, packet);
+}
+
+void SendPacketHook::receiveCallbackStructureBlockUpdate(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
+                                         const std::shared_ptr<Packet>& packet) {
+    SendPacketHook::setVariables(packetHandlerDispatcher, networkIdentifier, netEventCallback);
+
+    auto event = nes::make_holder<PacketEvent>(packet.get());
+    eventMgr.trigger(event);
+    if (!event->isCancelled())
+        receivePacketStructureBlockUpdateOriginal(packetHandlerDispatcher, networkIdentifier, netEventCallback, packet);
+}
+
+void SendPacketHook::receiveCallbackShowStoreOffer(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
+                                         const std::shared_ptr<Packet>& packet) {
+    SendPacketHook::setVariables(packetHandlerDispatcher, networkIdentifier, netEventCallback);
+
+    auto event = nes::make_holder<PacketEvent>(packet.get());
+    eventMgr.trigger(event);
+    if (!event->isCancelled())
+        receivePacketShowStoreOfferOriginal(packetHandlerDispatcher, networkIdentifier, netEventCallback, packet);
+}
+
+void SendPacketHook::receiveCallbackPlayerSkin(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
+                                         const std::shared_ptr<Packet>& packet) {
+    SendPacketHook::setVariables(packetHandlerDispatcher, networkIdentifier, netEventCallback);
+
+    auto event = nes::make_holder<PacketEvent>(packet.get());
+    eventMgr.trigger(event);
+    if (!event->isCancelled())
+        receivePacketPlayerSkinOriginal(packetHandlerDispatcher, networkIdentifier, netEventCallback, packet);
+}
+
+void SendPacketHook::receiveCallbackSetLastHurtBy(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
+                                         const std::shared_ptr<Packet>& packet) {
+    SendPacketHook::setVariables(packetHandlerDispatcher, networkIdentifier, netEventCallback);
+
+    auto event = nes::make_holder<PacketEvent>(packet.get());
+    eventMgr.trigger(event);
+    if (!event->isCancelled())
+        receivePacketSetLastHurtByOriginal(packetHandlerDispatcher, networkIdentifier, netEventCallback, packet);
+}
+
+void SendPacketHook::receiveCallbackNPCRequest(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
+                                         const std::shared_ptr<Packet>& packet) {
+    SendPacketHook::setVariables(packetHandlerDispatcher, networkIdentifier, netEventCallback);
+
+    auto event = nes::make_holder<PacketEvent>(packet.get());
+    eventMgr.trigger(event);
+    if (!event->isCancelled())
+        receivePacketNPCRequestOriginal(packetHandlerDispatcher, networkIdentifier, netEventCallback, packet);
+}
+
 void SendPacketHook::receiveCallbackChangeDimension(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
                                          const std::shared_ptr<Packet>& packet) {
     SendPacketHook::setVariables(packetHandlerDispatcher, networkIdentifier, netEventCallback);
@@ -798,6 +1038,97 @@ void SendPacketHook::enableHook() {
     std::shared_ptr<Packet> setDifficultyPacket = SDK::createPacket((int) MinecraftPacketIds::SetDifficulty);
     Memory::hookFunc((void *) setDifficultyPacket->packetHandler->vTable[1], (void*)receiveCallbackSetDifficulty,
                      (void **) &receivePacketSetDifficultyOriginal, "ReceivePacketHook");
+    
+    /*std::shared_ptr<Packet> setPlayerGameType = SDK::createPacket((int)MinecraftPacketIds::SetPlayerGameType);
+    Memory::hookFunc((void *) setPlayerGameType->packetHandler->vTable[1], (void *)receiveCallbackSetPlayerGameType,
+                 (void **) &receivePacketSetPlayerGameTypeOriginal, "ReceivePacketHook");*/
+
+    std::shared_ptr<Packet> playerList = SDK::createPacket((int) MinecraftPacketIds::PlayerList);
+    Memory::hookFunc((void *) playerList->packetHandler->vTable[1], (void *)receiveCallbackPlayerList,
+                 (void **) &receivePacketPlayerListOriginal, "ReceivePacketHook");
+
+    /*std::shared_ptr<Packet> simpleEvent = SDK::createPacket((int) MinecraftPacketIds::SimpleEvent);
+    Memory::hookFunc((void *) simpleEvent->packetHandler->vTable[1], (void *)receiveCallbackSimpleEvent,
+                 (void **) &receivePacketSimpleEventOriginal, "ReceivePacketHook");
+
+    std::shared_ptr<Packet> mapData = SDK::createPacket((int) MinecraftPacketIds::MapData);
+    Memory::hookFunc((void *) mapData->packetHandler->vTable[1], (void *)receiveCallbackMapData,
+                 (void **) &receivePacketMapDataOriginal, "ReceivePacketHook");
+
+    std::shared_ptr<Packet> mapInfoRequest = SDK::createPacket((int) MinecraftPacketIds::MapInfoRequest);
+    Memory::hookFunc((void *) mapInfoRequest->packetHandler->vTable[1], (void *)receiveCallbackMapInfoRequest,
+                 (void **) &receivePacketMapInfoRequestOriginal, "ReceivePacketHook");
+
+    std::shared_ptr<Packet> requestChunkRadius = SDK::createPacket((int) MinecraftPacketIds::RequestChunkRadius);
+    Memory::hookFunc((void *) requestChunkRadius->packetHandler->vTable[1], (void *)receiveCallbackRequestChunkRadius,
+                 (void **) &receivePacketRequestChunkRadiusOriginal, "ReceivePacketHook");
+
+    std::shared_ptr<Packet> chunkRadiusUpdated = SDK::createPacket((int) MinecraftPacketIds::ChunkRadiusUpdated);
+    Memory::hookFunc((void *) chunkRadiusUpdated->packetHandler->vTable[1], (void *)receiveCallbackChunkRadiusUpdated,
+                 (void **) &receivePacketChunkRadiusUpdatedOriginal, "ReceivePacketHook");
+
+    std::shared_ptr<Packet> gameRulesChanged = SDK::createPacket((int) MinecraftPacketIds::GameRulesChanged);
+    Memory::hookFunc((void *) gameRulesChanged->packetHandler->vTable[1], (void *)receiveCallbackGameRulesChanged,
+                 (void **) &receivePacketGameRulesChangedOriginal, "ReceivePacketHook");
+
+    std::shared_ptr<Packet> bossEvent = SDK::createPacket((int) MinecraftPacketIds::BossEvent);
+    Memory::hookFunc((void *) bossEvent->packetHandler->vTable[1], (void *)receiveCallbackBossEvent,
+                 (void **) &receivePacketBossEventOriginal, "ReceivePacketHook");
+
+    std::shared_ptr<Packet> showCredits = SDK::createPacket((int) MinecraftPacketIds::ShowCredits);
+    Memory::hookFunc((void *) showCredits->packetHandler->vTable[1], (void *)receiveCallbackShowCredits,
+                 (void **) &receivePacketShowCreditsOriginal, "ReceivePacketHook");
+
+    std::shared_ptr<Packet> commandOutput = SDK::createPacket((int) MinecraftPacketIds::CommandOutput);
+    Memory::hookFunc((void *) commandOutput->packetHandler->vTable[1], (void *)receiveCallbackCommandOutput,
+                 (void **) &receivePacketCommandOutputOriginal, "ReceivePacketHook");
+
+    std::shared_ptr<Packet> updateTrade = SDK::createPacket((int) MinecraftPacketIds::UpdateTrade);
+    Memory::hookFunc((void *) updateTrade->packetHandler->vTable[1], (void *)receiveCallbackUpdateTrade,
+                 (void **) &receivePacketUpdateTradeOriginal, "ReceivePacketHook");
+
+    std::shared_ptr<Packet> updateEquip = SDK::createPacket((int) MinecraftPacketIds::UpdateEquip);
+    Memory::hookFunc((void *) updateEquip->packetHandler->vTable[1], (void *)receiveCallbackUpdateEquip,
+                 (void **) &receivePacketUpdateEquipOriginal, "ReceivePacketHook");
+
+    std::shared_ptr<Packet> resourcePackDataInfo = SDK::createPacket((int) MinecraftPacketIds::ResourcePackDataInfo);
+    Memory::hookFunc((void *) resourcePackDataInfo->packetHandler->vTable[1], (void *)receiveCallbackResourcePackDataInfo,
+                 (void **) &receivePacketResourcePackDataInfoOriginal, "ReceivePacketHook");
+
+    std::shared_ptr<Packet> resourcePackChunkData = SDK::createPacket((int) MinecraftPacketIds::ResourcePackChunkData);
+    Memory::hookFunc((void *) resourcePackChunkData->packetHandler->vTable[1], (void *)receiveCallbackResourcePackChunkData,
+                 (void **) &receivePacketResourcePackChunkDataOriginal, "ReceivePacketHook");
+
+    std::shared_ptr<Packet> transfer = SDK::createPacket((int) MinecraftPacketIds::Transfer);
+    Memory::hookFunc((void *) transfer->packetHandler->vTable[1], (void *)receiveCallbackTransfer,
+                 (void **) &receivePacketTransferOriginal, "ReceivePacketHook");
+    */
+
+    std::shared_ptr<Packet> stopSound = SDK::createPacket((int) MinecraftPacketIds::StopSound);
+    Memory::hookFunc((void *) stopSound->packetHandler->vTable[1], (void *)receiveCallbackStopSound,
+                 (void **) &receivePacketStopSoundOriginal, "ReceivePacketHook");
+
+   
+
+    /*std::shared_ptr<Packet> addBehaviorTree = SDK::createPacket((int)MinecraftPacketIds::AddBehaviorTree);
+    Memory::hookFunc((void *) addBehaviorTree->packetHandler->vTable[1], (void *)receiveCallbackAddBehaviorTree,
+                 (void **) &receivePacketAddBehaviorTreeOriginal, "ReceivePacketHook");
+
+    std::shared_ptr<Packet> structureBlockUpdate = SDK::createPacket((int) MinecraftPacketIds::StructureBlockUpdate);
+    Memory::hookFunc((void *) structureBlockUpdate->packetHandler->vTable[1], (void *)receiveCallbackStructureBlockUpdate,
+                 (void **) &receivePacketStructureBlockUpdateOriginal, "ReceivePacketHook");
+
+    std::shared_ptr<Packet> showStoreOffer = SDK::createPacket((int) MinecraftPacketIds::ShowStoreOffer);
+    Memory::hookFunc((void *) showStoreOffer->packetHandler->vTable[1], (void *)receiveCallbackShowStoreOffer,
+                 (void **) &receivePacketShowStoreOfferOriginal, "ReceivePacketHook");*/
+
+    /*std::shared_ptr<Packet> setLastHurtBy = SDK::createPacket((int)MinecraftPacketIds::SetLastHurtBy);
+    Memory::hookFunc((void *) setLastHurtBy->packetHandler->vTable[1], (void *)receiveCallbackSetLastHurtBy,
+                 (void **) &receivePacketSetLastHurtByOriginal, "ReceivePacketHook");
+
+    std::shared_ptr<Packet> npcRequest = SDK::createPacket((int) MinecraftPacketIds::NPCRequest);
+    Memory::hookFunc((void *) npcRequest->packetHandler->vTable[1], (void *)receiveCallbackNPCRequest,
+                 (void **) &receivePacketNPCRequestOriginal, "ReceivePacketHook");*/
 
     std::shared_ptr<Packet> changeDimensionPacket = SDK::createPacket((int) MinecraftPacketIds::ChangeDimension);
     Memory::hookFunc((void *) changeDimensionPacket->packetHandler->vTable[1], (void*)receiveCallbackChangeDimension,

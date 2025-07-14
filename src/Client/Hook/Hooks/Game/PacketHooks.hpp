@@ -165,6 +165,78 @@ private:
     static void receiveCallbackSetDifficulty(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
                                     const std::shared_ptr<Packet>& packet);
 
+        static void receiveCallbackSetPlayerGameType(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
+                                               const std::shared_ptr<Packet>& packet);
+
+    static void receiveCallbackPlayerList(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
+                                               const std::shared_ptr<Packet>& packet);
+
+    static void receiveCallbackSimpleEvent(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
+                                               const std::shared_ptr<Packet>& packet);
+
+    static void receiveCallbackMapData(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
+                                               const std::shared_ptr<Packet>& packet);
+
+    static void receiveCallbackMapInfoRequest(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
+                                               const std::shared_ptr<Packet>& packet);
+
+    static void receiveCallbackRequestChunkRadius(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
+                                               const std::shared_ptr<Packet>& packet);
+
+    static void receiveCallbackChunkRadiusUpdated(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
+                                               const std::shared_ptr<Packet>& packet);
+
+    static void receiveCallbackGameRulesChanged(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
+                                               const std::shared_ptr<Packet>& packet);
+
+    static void receiveCallbackBossEvent(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
+                                               const std::shared_ptr<Packet>& packet);
+
+    static void receiveCallbackShowCredits(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
+                                               const std::shared_ptr<Packet>& packet);
+
+    static void receiveCallbackCommandOutput(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
+                                               const std::shared_ptr<Packet>& packet);
+
+    static void receiveCallbackUpdateTrade(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
+                                               const std::shared_ptr<Packet>& packet);
+
+    static void receiveCallbackUpdateEquip(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
+                                               const std::shared_ptr<Packet>& packet);
+
+    static void receiveCallbackResourcePackDataInfo(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
+                                               const std::shared_ptr<Packet>& packet);
+
+    static void receiveCallbackResourcePackChunkData(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
+                                               const std::shared_ptr<Packet>& packet);
+
+    static void receiveCallbackTransfer(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
+                                               const std::shared_ptr<Packet>& packet);
+
+    static void receiveCallbackPlaySound(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
+                                               const std::shared_ptr<Packet>& packet);
+
+    static void receiveCallbackStopSound(void* packetHandlerDispatcher, void* networkIdentifier, void* netEventCallback,
+                                               const std::shared_ptr<Packet>& packet);
+
+    static void receiveCallbackAddBehaviorTree(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
+                                               const std::shared_ptr<Packet>& packet);
+
+    static void receiveCallbackStructureBlockUpdate(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
+                                               const std::shared_ptr<Packet>& packet);
+
+    static void receiveCallbackShowStoreOffer(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
+                                               const std::shared_ptr<Packet>& packet);
+
+    static void receiveCallbackPlayerSkin(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
+                                               const std::shared_ptr<Packet>& packet);
+
+    static void receiveCallbackSetLastHurtBy(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
+                                               const std::shared_ptr<Packet>& packet);
+
+    static void receiveCallbackNPCRequest(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
+                                               const std::shared_ptr<Packet>& packet);
+
     static void receiveCallbackSetTitle(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
                                         const std::shared_ptr<Packet>& packet);
 
@@ -246,6 +318,28 @@ public:
     static inline receive receivePacketFullChunkDataOriginal = nullptr;
     static inline receive receivePacketSetCommandsEnabledOriginal = nullptr;
     static inline receive receivePacketSetDifficultyOriginal = nullptr;
+    static inline receive receivePacketSetPlayerGameTypeOriginal = nullptr;
+    static inline receive receivePacketPlayerListOriginal = nullptr;
+    static inline receive receivePacketSimpleEventOriginal = nullptr;
+    static inline receive receivePacketMapDataOriginal = nullptr;
+    static inline receive receivePacketMapInfoRequestOriginal = nullptr;
+    static inline receive receivePacketRequestChunkRadiusOriginal = nullptr;
+    static inline receive receivePacketChunkRadiusUpdatedOriginal = nullptr;
+    static inline receive receivePacketGameRulesChangedOriginal = nullptr;
+    static inline receive receivePacketBossEventOriginal = nullptr;
+    static inline receive receivePacketShowCreditsOriginal = nullptr;
+    static inline receive receivePacketCommandOutputOriginal = nullptr;
+    static inline receive receivePacketUpdateTradeOriginal = nullptr;
+    static inline receive receivePacketUpdateEquipOriginal = nullptr;
+    static inline receive receivePacketResourcePackDataInfoOriginal = nullptr;
+    static inline receive receivePacketResourcePackChunkDataOriginal = nullptr;
+    static inline receive receivePacketTransferOriginal = nullptr;
+    static inline receive receivePacketStopSoundOriginal = nullptr;
+    static inline receive receivePacketAddBehaviorTreeOriginal = nullptr;
+    static inline receive receivePacketStructureBlockUpdateOriginal = nullptr;
+    static inline receive receivePacketShowStoreOfferOriginal = nullptr;
+    static inline receive receivePacketPlayerSkinOriginal = nullptr;
+    static inline receive receivePacketSetLastHurtByOriginal = nullptr;
     static inline receive receivePacketChangeDimensionOriginal = nullptr;
     static inline receive receivePacketSetTitleOriginal = nullptr;
     static inline receive receivePacketPlaySoundOriginal = nullptr;
