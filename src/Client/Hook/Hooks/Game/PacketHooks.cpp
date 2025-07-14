@@ -1059,7 +1059,7 @@ void SendPacketHook::enableHook() {
     Memory::hookFunc((void *) showCredits->packetHandler->vTable[1], (void *)receiveCallbackShowCredits,
                  (void **) &receivePacketShowCreditsOriginal, "ReceivePacketHook");
 
-    std::shared_ptr<Packet> commandOutput = SDK::createPacket((int) MinecraftPacketIds::CommandOutput);
+    */std::shared_ptr<Packet> commandOutput = SDK::createPacket((int) MinecraftPacketIds::CommandOutput);
     Memory::hookFunc((void *) commandOutput->packetHandler->vTable[1], (void *)receiveCallbackCommandOutput,
                  (void **) &receivePacketCommandOutputOriginal, "ReceivePacketHook");
 
@@ -1082,7 +1082,7 @@ void SendPacketHook::enableHook() {
     std::shared_ptr<Packet> transfer = SDK::createPacket((int) MinecraftPacketIds::Transfer);
     Memory::hookFunc((void *) transfer->packetHandler->vTable[1], (void *)receiveCallbackTransfer,
                  (void **) &receivePacketTransferOriginal, "ReceivePacketHook");
-    */
+    
 
     std::shared_ptr<Packet> stopSound = SDK::createPacket((int) MinecraftPacketIds::StopSound);
     Memory::hookFunc((void *) stopSound->packetHandler->vTable[1], (void *)receiveCallbackStopSound,
