@@ -213,9 +213,6 @@ private:
     static void receiveCallbackTransfer(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
                                                const std::shared_ptr<Packet>& packet);
 
-    static void receiveCallbackPlaySound(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
-                                               const std::shared_ptr<Packet>& packet);
-
     static void receiveCallbackStopSound(void* packetHandlerDispatcher, void* networkIdentifier, void* netEventCallback,
                                                const std::shared_ptr<Packet>& packet);
 
@@ -226,9 +223,6 @@ private:
                                                const std::shared_ptr<Packet>& packet);
 
     static void receiveCallbackShowStoreOffer(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
-                                               const std::shared_ptr<Packet>& packet);
-
-    static void receiveCallbackPlayerSkin(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
                                                const std::shared_ptr<Packet>& packet);
 
     static void receiveCallbackSetLastHurtBy(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
