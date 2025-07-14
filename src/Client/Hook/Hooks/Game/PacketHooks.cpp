@@ -1037,7 +1037,7 @@ void SendPacketHook::enableHook() {
 
     std::shared_ptr<Packet> mapInfoRequest = SDK::createPacket((int) MinecraftPacketIds::MapInfoRequest);
     Memory::hookFunc((void *) mapInfoRequest->packetHandler->vTable[1], (void *)receiveCallbackMapInfoRequest,
-                 (void **) &receivePacketMapInfoRequestOriginal, "ReceivePacketHook");
+                 (void **) &receivePacketMapInfoRequestOriginal, "ReceivePacketHook");*/
 
     std::shared_ptr<Packet> requestChunkRadius = SDK::createPacket((int) MinecraftPacketIds::RequestChunkRadius);
     Memory::hookFunc((void *) requestChunkRadius->packetHandler->vTable[1], (void *)receiveCallbackRequestChunkRadius,
@@ -1059,7 +1059,7 @@ void SendPacketHook::enableHook() {
     Memory::hookFunc((void *) showCredits->packetHandler->vTable[1], (void *)receiveCallbackShowCredits,
                  (void **) &receivePacketShowCreditsOriginal, "ReceivePacketHook");
 
-    */std::shared_ptr<Packet> commandOutput = SDK::createPacket((int) MinecraftPacketIds::CommandOutput);
+    std::shared_ptr<Packet> commandOutput = SDK::createPacket((int) MinecraftPacketIds::CommandOutput);
     Memory::hookFunc((void *) commandOutput->packetHandler->vTable[1], (void *)receiveCallbackCommandOutput,
                  (void **) &receivePacketCommandOutputOriginal, "ReceivePacketHook");
 
