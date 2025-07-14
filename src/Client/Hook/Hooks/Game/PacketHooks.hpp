@@ -332,7 +332,6 @@ public:
     static inline receive receivePacketAddBehaviorTreeOriginal = nullptr;
     static inline receive receivePacketStructureBlockUpdateOriginal = nullptr;
     static inline receive receivePacketShowStoreOfferOriginal = nullptr;
-    static inline receive receivePacketPlayerSkinOriginal = nullptr;
     static inline receive receivePacketSetLastHurtByOriginal = nullptr;
     static inline receive receivePacketChangeDimensionOriginal = nullptr;
     static inline receive receivePacketSetTitleOriginal = nullptr;
