@@ -877,7 +877,7 @@ void SendPacketHook::enableHook() {
 
     std::shared_ptr<Packet> passengerJumpPacket = SDK::createPacket((int) MinecraftPacketIds::PassengerJump);
     Memory::hookFunc((void *) passengerJumpPacket->packetHandler->vTable[1], (void*)receiveCallbackPassengerJump,
-                     (void **) &receivePacketPassengerJumpOriginal, "ReceivePacketHook");
+                     (void **) &receivePacketPassengerJumpOriginal, "ReceivePacketHook");*/
 
     std::shared_ptr<Packet> updateBlockPacket = SDK::createPacket((int) MinecraftPacketIds::UpdateBlock);
     Memory::hookFunc((void *) updateBlockPacket->packetHandler->vTable[1], (void*)receiveCallbackUpdateBlock,
@@ -891,7 +891,7 @@ void SendPacketHook::enableHook() {
     Memory::hookFunc((void *) tickSyncPacket->packetHandler->vTable[1], (void*)receiveCallbackTickSync,
                      (void **) &receivePacketTickSyncOriginal, "ReceivePacketHook");
 
-    std::shared_ptr<Packet> levelSoundEventV1Packet = SDK::createPacket((int) MinecraftPacketIds::LevelSoundEventV1);
+    /*std::shared_ptr<Packet> levelSoundEventV1Packet = SDK::createPacket((int) MinecraftPacketIds::LevelSoundEventV1);
     Memory::hookFunc((void *) levelSoundEventV1Packet->packetHandler->vTable[1], (void*)receiveCallbackLevelSoundEventV1,
                      (void **) &receivePacketLevelSoundEventV1Original, "ReceivePacketHook");
 
@@ -991,9 +991,9 @@ void SendPacketHook::enableHook() {
     Memory::hookFunc((void *) craftingDataPacket->packetHandler->vTable[1], (void*)receiveCallbackCraftingData,
                      (void **) &receivePacketCraftingDataOriginal, "ReceivePacketHook");*/
 
-    std::shared_ptr<Packet> craftingEventPacket = SDK::createPacket((int)MinecraftPacketIds::CraftingEvent);
+    /*std::shared_ptr<Packet> craftingEventPacket = SDK::createPacket((int)MinecraftPacketIds::CraftingEvent);
     Memory::hookFunc((void *) craftingEventPacket->packetHandler->vTable[1], (void*)receiveCallbackCraftingEvent,
-                     (void **) &receivePacketCraftingEventOriginal, "ReceivePacketHook");
+                     (void **) &receivePacketCraftingEventOriginal, "ReceivePacketHook");*/
 
     std::shared_ptr<Packet> guiDataPickItemPacket = SDK::createPacket((int)MinecraftPacketIds::GuiDataPickItem);
     Memory::hookFunc((void *) guiDataPickItemPacket->packetHandler->vTable[1], (void*)receiveCallbackGuiDataPickItem,
