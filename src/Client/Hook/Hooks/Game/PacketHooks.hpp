@@ -15,7 +15,7 @@ private:
     static void receiveCallbackPlayStatus(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
                                     const std::shared_ptr<Packet>& packet);
 
-    /*static void receiveCallbackServerToClientHandshake(void* packetHandlerDispatcher, void* networkIdentifier, void* netEventCallback,
+    static void receiveCallbackServerToClientHandshake(void* packetHandlerDispatcher, void* networkIdentifier, void* netEventCallback,
                                 const std::shared_ptr<Packet>& packet);
 
     static void receiveCallbackDisconnect(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
@@ -72,7 +72,7 @@ private:
     static void receiveCallbackLevelSoundEventV1(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
                                     const std::shared_ptr<Packet>& packet);
 
-    */static void receiveCallbackLevelEvent(void* packetHandlerDispatcher, void* networkIdentifier, void* netEventCallback,
+    static void receiveCallbackLevelEvent(void* packetHandlerDispatcher, void* networkIdentifier, void* netEventCallback,
                                     const std::shared_ptr<Packet>& packet);
 
     static void receiveCallbackTileEvent(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
@@ -141,17 +141,17 @@ private:
     static void receiveCallbackContainerSetData(void* packetHandlerDispatcher, void* networkIdentifier, void* netEventCallback,
                                     const std::shared_ptr<Packet>& packet);
 
-    /*static void receiveCallbackCraftingData(void* packetHandlerDispatcher, void* networkIdentifier, void* netEventCallback,
-                                    const std::shared_ptr<Packet>& packet);*/
+    static void receiveCallbackCraftingData(void* packetHandlerDispatcher, void* networkIdentifier, void* netEventCallback,
+                                    const std::shared_ptr<Packet>& packet);
 
-    //static void receiveCallbackCraftingEvent(void* packetHandlerDispatcher, void* networkIdentifier, void* netEventCallback,
-    //                                const std::shared_ptr<Packet>& packet);
+    static void receiveCallbackCraftingEvent(void* packetHandlerDispatcher, void* networkIdentifier, void* netEventCallback,
+                                    const std::shared_ptr<Packet>& packet);
 
     static void receiveCallbackGuiDataPickItem(void* packetHandlerDispatcher, void* networkIdentifier, void* netEventCallback,
                                     const std::shared_ptr<Packet>& packet);
 
-    /*static void receiveCallbackAdventureSettings_Deprecated(void* packetHandlerDispatcher, void* networkIdentifier, void* netEventCallback,
-                                    const std::shared_ptr<Packet>& packet);*/
+    static void receiveCallbackAdventureSettings_Deprecated(void* packetHandlerDispatcher, void* networkIdentifier, void* netEventCallback,
+                                    const std::shared_ptr<Packet>& packet);
 
     static void receiveCallbackBlockActorData(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
                                     const std::shared_ptr<Packet>& packet);
@@ -196,7 +196,7 @@ public:
 
     static inline original sendOriginal = nullptr;
     static inline receive receivePacketPlayStatusOriginal = nullptr;
-    /*static inline receive receivePacketServerToClientHandshakeOriginal = nullptr;
+    static inline receive receivePacketServerToClientHandshakeOriginal = nullptr;
     static inline receive receivePacketDisconnectOriginal = nullptr;
     static inline receive receivePacketRescourcePacksInfoOriginal = nullptr;
     static inline receive receivePacketRescourcePackStackOriginal = nullptr;
@@ -215,7 +215,7 @@ public:
     static inline receive receivePacketAddPaintingOriginal = nullptr;
     static inline receive receivePacketTickSyncOriginal = nullptr;
     static inline receive receivePacketLevelSoundEventV1Original = nullptr;
-    */static inline receive receivePacketLevelEventOriginal = nullptr;
+    static inline receive receivePacketLevelEventOriginal = nullptr;
     static inline receive receivePacketTileEventOriginal = nullptr;
     static inline receive receivePacketActorEventOriginal = nullptr;
     static inline receive receivePacketMobEffectOriginal = nullptr;
@@ -238,10 +238,10 @@ public:
     static inline receive receivePacketInventoryContentOriginal = nullptr;
     static inline receive receivePacketInventorySlotOriginal = nullptr;
     static inline receive receivePacketContainerSetDataOriginal = nullptr;
-    //static inline receive receivePacketCraftingDataOriginal = nullptr;
-    //static inline receive receivePacketCraftingEventOriginal = nullptr;
+    static inline receive receivePacketCraftingDataOriginal = nullptr;
+    static inline receive receivePacketCraftingEventOriginal = nullptr;
     static inline receive receivePacketGuiDataPickItemOriginal = nullptr;
-    /*static inline receive receivePacketAdventureSettings_DeprecatedOriginal = nullptr; */
+    static inline receive receivePacketAdventureSettings_DeprecatedOriginal = nullptr;
     static inline receive receivePacketBlockActorDataOriginal = nullptr;
     static inline receive receivePacketFullChunkDataOriginal = nullptr;
     static inline receive receivePacketSetCommandsEnabledOriginal = nullptr;

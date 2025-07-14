@@ -23,7 +23,7 @@ void SendPacketHook::receiveCallbackPlayStatus(void *packetHandlerDispatcher, vo
         receivePacketPlayStatusOriginal(packetHandlerDispatcher, networkIdentifier, netEventCallback, packet);
 }
 
-/*void SendPacketHook::receiveCallbackServerToClientHandshake(void* packetHandlerDispatcher, void* networkIdentifier, void* netEventCallback,
+void SendPacketHook::receiveCallbackServerToClientHandshake(void* packetHandlerDispatcher, void* networkIdentifier, void* netEventCallback,
                                          const std::shared_ptr<Packet>& packet) {
     SendPacketHook::setVariables(packetHandlerDispatcher, networkIdentifier, netEventCallback);
 
@@ -213,7 +213,7 @@ void SendPacketHook::receiveCallbackLevelSoundEventV1(void *packetHandlerDispatc
         receivePacketLevelSoundEventV1Original(packetHandlerDispatcher, networkIdentifier, netEventCallback, packet);
 }
 
-*/void SendPacketHook::receiveCallbackLevelEvent(void* packetHandlerDispatcher, void* networkIdentifier, void* netEventCallback,
+void SendPacketHook::receiveCallbackLevelEvent(void* packetHandlerDispatcher, void* networkIdentifier, void* netEventCallback,
                                          const std::shared_ptr<Packet>& packet) {
     SendPacketHook::setVariables(packetHandlerDispatcher, networkIdentifier, netEventCallback);
 
@@ -443,7 +443,7 @@ void SendPacketHook::receiveCallbackContainerSetData(void *packetHandlerDispatch
         receivePacketContainerSetDataOriginal(packetHandlerDispatcher, networkIdentifier, netEventCallback, packet);
 }
 
-/*void SendPacketHook::receiveCallbackCraftingData(void* packetHandlerDispatcher, void* networkIdentifier, void* netEventCallback,
+void SendPacketHook::receiveCallbackCraftingData(void* packetHandlerDispatcher, void* networkIdentifier, void* netEventCallback,
                                          const std::shared_ptr<Packet>& packet) {
     SendPacketHook::setVariables(packetHandlerDispatcher, networkIdentifier, netEventCallback);
 
@@ -451,9 +451,9 @@ void SendPacketHook::receiveCallbackContainerSetData(void *packetHandlerDispatch
     eventMgr.trigger(event);
     if (!event->isCancelled())
         receivePacketCraftingDataOriginal(packetHandlerDispatcher, networkIdentifier, netEventCallback, packet);
-}*/
+}
 
-/*void SendPacketHook::receiveCallbackCraftingEvent(void* packetHandlerDispatcher, void* networkIdentifier, void* netEventCallback,
+void SendPacketHook::receiveCallbackCraftingEvent(void* packetHandlerDispatcher, void* networkIdentifier, void* netEventCallback,
                                          const std::shared_ptr<Packet>& packet) {
     SendPacketHook::setVariables(packetHandlerDispatcher, networkIdentifier, netEventCallback);
 
@@ -461,7 +461,7 @@ void SendPacketHook::receiveCallbackContainerSetData(void *packetHandlerDispatch
     eventMgr.trigger(event);
     if (!event->isCancelled())
         receivePacketCraftingEventOriginal(packetHandlerDispatcher, networkIdentifier, netEventCallback, packet);
-}*/
+}
 
 void SendPacketHook::receiveCallbackGuiDataPickItem(void* packetHandlerDispatcher, void* networkIdentifier, void* netEventCallback,
                                          const std::shared_ptr<Packet>& packet) {
@@ -473,7 +473,7 @@ void SendPacketHook::receiveCallbackGuiDataPickItem(void* packetHandlerDispatche
         receivePacketGuiDataPickItemOriginal(packetHandlerDispatcher, networkIdentifier, netEventCallback, packet);
 }
 
-/*void SendPacketHook::receiveCallbackAdventureSettings_Deprecated(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
+void SendPacketHook::receiveCallbackAdventureSettings_Deprecated(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
                                          const std::shared_ptr<Packet>& packet) {
     SendPacketHook::setVariables(packetHandlerDispatcher, networkIdentifier, netEventCallback);
 
@@ -481,7 +481,7 @@ void SendPacketHook::receiveCallbackGuiDataPickItem(void* packetHandlerDispatche
     eventMgr.trigger(event);
     if (!event->isCancelled())
         receivePacketAdventureSettings_DeprecatedOriginal(packetHandlerDispatcher, networkIdentifier, netEventCallback, packet);
-}*/
+}
 
 void SendPacketHook::receiveCallbackBlockActorData(void *packetHandlerDispatcher, void *networkIdentifier, void *netEventCallback,
                                          const std::shared_ptr<Packet>& packet) {
