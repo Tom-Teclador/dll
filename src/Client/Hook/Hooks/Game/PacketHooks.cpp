@@ -1019,15 +1019,15 @@ void SendPacketHook::enableHook() {
     Memory::hookFunc((void *) setDifficultyPacket->packetHandler->vTable[1], (void*)receiveCallbackSetDifficulty,
                      (void **) &receivePacketSetDifficultyOriginal, "ReceivePacketHook");
     
-    /*std::shared_ptr<Packet> setPlayerGameType = SDK::createPacket((int)MinecraftPacketIds::SetPlayerGameType);
+    std::shared_ptr<Packet> setPlayerGameType = SDK::createPacket((int)MinecraftPacketIds::SetPlayerGameType);
     Memory::hookFunc((void *) setPlayerGameType->packetHandler->vTable[1], (void *)receiveCallbackSetPlayerGameType,
-                 (void **) &receivePacketSetPlayerGameTypeOriginal, "ReceivePacketHook");*/
+                 (void **) &receivePacketSetPlayerGameTypeOriginal, "ReceivePacketHook");
 
     std::shared_ptr<Packet> playerList = SDK::createPacket((int) MinecraftPacketIds::PlayerList);
     Memory::hookFunc((void *) playerList->packetHandler->vTable[1], (void *)receiveCallbackPlayerList,
                  (void **) &receivePacketPlayerListOriginal, "ReceivePacketHook");
 
-    /*std::shared_ptr<Packet> simpleEvent = SDK::createPacket((int) MinecraftPacketIds::SimpleEvent);
+    std::shared_ptr<Packet> simpleEvent = SDK::createPacket((int) MinecraftPacketIds::SimpleEvent);
     Memory::hookFunc((void *) simpleEvent->packetHandler->vTable[1], (void *)receiveCallbackSimpleEvent,
                  (void **) &receivePacketSimpleEventOriginal, "ReceivePacketHook");
 
@@ -1037,7 +1037,7 @@ void SendPacketHook::enableHook() {
 
     std::shared_ptr<Packet> mapInfoRequest = SDK::createPacket((int) MinecraftPacketIds::MapInfoRequest);
     Memory::hookFunc((void *) mapInfoRequest->packetHandler->vTable[1], (void *)receiveCallbackMapInfoRequest,
-                 (void **) &receivePacketMapInfoRequestOriginal, "ReceivePacketHook");*/
+                 (void **) &receivePacketMapInfoRequestOriginal, "ReceivePacketHook");
 
     std::shared_ptr<Packet> requestChunkRadius = SDK::createPacket((int) MinecraftPacketIds::RequestChunkRadius);
     Memory::hookFunc((void *) requestChunkRadius->packetHandler->vTable[1], (void *)receiveCallbackRequestChunkRadius,
