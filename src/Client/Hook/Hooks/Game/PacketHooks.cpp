@@ -1090,7 +1090,7 @@ void SendPacketHook::enableHook() {
 
    
 
-    /*std::shared_ptr<Packet> addBehaviorTree = SDK::createPacket((int)MinecraftPacketIds::AddBehaviorTree);
+    std::shared_ptr<Packet> addBehaviorTree = SDK::createPacket((int)MinecraftPacketIds::AddBehaviorTree);
     Memory::hookFunc((void *) addBehaviorTree->packetHandler->vTable[1], (void *)receiveCallbackAddBehaviorTree,
                  (void **) &receivePacketAddBehaviorTreeOriginal, "ReceivePacketHook");
 
@@ -1100,15 +1100,15 @@ void SendPacketHook::enableHook() {
 
     std::shared_ptr<Packet> showStoreOffer = SDK::createPacket((int) MinecraftPacketIds::ShowStoreOffer);
     Memory::hookFunc((void *) showStoreOffer->packetHandler->vTable[1], (void *)receiveCallbackShowStoreOffer,
-                 (void **) &receivePacketShowStoreOfferOriginal, "ReceivePacketHook");*/
+                 (void **) &receivePacketShowStoreOfferOriginal, "ReceivePacketHook");
 
-    /*std::shared_ptr<Packet> setLastHurtBy = SDK::createPacket((int)MinecraftPacketIds::SetLastHurtBy);
+    std::shared_ptr<Packet> setLastHurtBy = SDK::createPacket((int)MinecraftPacketIds::SetLastHurtBy);
     Memory::hookFunc((void *) setLastHurtBy->packetHandler->vTable[1], (void *)receiveCallbackSetLastHurtBy,
                  (void **) &receivePacketSetLastHurtByOriginal, "ReceivePacketHook");
 
     std::shared_ptr<Packet> npcRequest = SDK::createPacket((int) MinecraftPacketIds::NPCRequest);
     Memory::hookFunc((void *) npcRequest->packetHandler->vTable[1], (void *)receiveCallbackNPCRequest,
-                 (void **) &receivePacketNPCRequestOriginal, "ReceivePacketHook");*/
+                 (void **) &receivePacketNPCRequestOriginal, "ReceivePacketHook");
 
     std::shared_ptr<Packet> changeDimensionPacket = SDK::createPacket((int) MinecraftPacketIds::ChangeDimension);
     Memory::hookFunc((void *) changeDimensionPacket->packetHandler->vTable[1], (void*)receiveCallbackChangeDimension,
