@@ -881,7 +881,7 @@ void SendPacketHook::enableHook() {
 
     std::shared_ptr<Packet> updateBlockPacket = SDK::createPacket((int) MinecraftPacketIds::UpdateBlock);
     Memory::hookFunc((void *) updateBlockPacket->packetHandler->vTable[1], (void*)receiveCallbackUpdateBlock,
-                     (void **) &receivePacketUpdateBlockOriginal, "ReceivePacketHook");
+                     (void **) &receivePacketUpdateBlockOriginal, "ReceivePacketHook");*/
 
     std::shared_ptr<Packet> addPaintingPacket = SDK::createPacket((int) MinecraftPacketIds::AddPainting);
     Memory::hookFunc((void *) addPaintingPacket->packetHandler->vTable[1], (void*)receiveCallbackAddPainting,
@@ -889,7 +889,7 @@ void SendPacketHook::enableHook() {
 
     std::shared_ptr<Packet> tickSyncPacket = SDK::createPacket((int) MinecraftPacketIds::TickSync);
     Memory::hookFunc((void *) tickSyncPacket->packetHandler->vTable[1], (void*)receiveCallbackTickSync,
-                     (void **) &receivePacketTickSyncOriginal, "ReceivePacketHook");*/
+                     (void **) &receivePacketTickSyncOriginal, "ReceivePacketHook");
 
     /*std::shared_ptr<Packet> levelSoundEventV1Packet = SDK::createPacket((int) MinecraftPacketIds::LevelSoundEventV1);
     Memory::hookFunc((void *) levelSoundEventV1Packet->packetHandler->vTable[1], (void*)receiveCallbackLevelSoundEventV1,
