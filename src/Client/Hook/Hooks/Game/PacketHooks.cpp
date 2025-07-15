@@ -883,9 +883,9 @@ void SendPacketHook::enableHook() {
     Memory::hookFunc((void *) updateBlockPacket->packetHandler->vTable[1], (void*)receiveCallbackUpdateBlock,
                      (void **) &receivePacketUpdateBlockOriginal, "ReceivePacketHook");*/
 
-    std::shared_ptr<Packet> addPaintingPacket = SDK::createPacket((int) MinecraftPacketIds::AddPainting);
+    /*std::shared_ptr<Packet> addPaintingPacket = SDK::createPacket((int)MinecraftPacketIds::AddPainting);
     Memory::hookFunc((void *) addPaintingPacket->packetHandler->vTable[1], (void*)receiveCallbackAddPainting,
-                     (void **) &receivePacketAddPaintingOriginal, "ReceivePacketHook");
+                     (void **) &receivePacketAddPaintingOriginal, "ReceivePacketHook");*/
 
     std::shared_ptr<Packet> tickSyncPacket = SDK::createPacket((int) MinecraftPacketIds::TickSync);
     Memory::hookFunc((void *) tickSyncPacket->packetHandler->vTable[1], (void*)receiveCallbackTickSync,
